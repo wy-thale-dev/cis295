@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #111;
+    color: #EEE;
+}
+header {
+    background-color: #000;
+}
+header h1 {
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5rem;
+    box-shadow: 2px 2px 8px black;
+}
