@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Color Palette */
+$light-background: #95cbf7;
+$bright-background: #fafafa;
+$earth-background: #dcad7f;
+$tree-background: #5f6749;
+$tree-darker: #4a5039;
+$tree-lighter: #8F967E;
+$water-background: #213763;
+$dark-background: #000;
+
+/* Typography */
+$heading: 4rem;
+$anchor: 2rem;
+$body: 2rem;
+$aside: 1.7rem;
+
+body {
+    background-color: $light-background;
+    color: $dark-background;
+    font-family: "Ubuntu", sans-serif;
+    header {
+        background-color: $bright-background;
+        margin: 10px 10px 0 10px;
+        border-radius: 60px 60px 0 0;
+        display: flex;
+        padding: 3px;
+        overflow: hidden;
+        figure {
+            background-image: url(../images/MC_Logo_Header.png);
+            min-width: 200px;
+            aspect-ratio: 1408/768;
+            background-size: cover;
+        }
+        figcaption {
+            display: flex;
+            align-items: center;
+            h1 {
+                text-align: center;
+                padding: 10px;
+                font-size: $heading;
+            }
+        }
+    }
+    nav.navbar {
+        background-color: $earth-background;
+        width: auto;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 5px;
+        a {
+            width: 18%;
+            text-decoration: none;
+            text-align: center;
+            font-size: $anchor;
+            background-color: $tree-background;
+            color: $bright-background;
+            padding: 5px;
+            border-radius: 10px 10px 0 0;
+            &:hover {
+                transition: 250ms;
+                background-color: $tree-darker;
+                color: $light-background;
+            }
+        }
+        
+    }
+    section.hero {
+        background-color: $tree-background;
+        padding: 10px 0 10px 0;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        margin: 0;
+        figure {
+            background-image: url(../images/mountain.jpg);
+            background-size: cover;
+            width: auto; min-height: 300px;
+            aspect-ratio: 2/1;
+            position: relative;
+            h1 {
+                position: absolute;
+                top: 20%; left: 10%;
+                background-color: rgba($bright-background, .5);
+                padding: 5px;
+                border-radius: 10px;
+                font-size: $heading;
+            }
+            a {
+                position: absolute;
+                top: 38%; left: 15%;
+                text-align: center;
+                text-decoration: none;
+                color: $bright-background;
+                background-color: $tree-background;
+                font-size: $anchor;
+                padding: 8px;
+                border-radius: 10px;
+                box-shadow: 0 2px 2px $dark-background;
+                &:hover {
+                    transition: 250ms;
+                    background-color: $tree-darker;
+                    color: $light-background;
+                }
+            }
+        }
+    }
+    main {
+        background-color: $tree-background;
+        padding: 10px;
+        section {
+            background-color: $tree-lighter;
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 10px;
+            margin: 20px 0 20px 0;
+            h2 {
+                text-align: center;
+                font-size: $heading;
+                padding: 5px;
+            }
+            p {
+                font-size: $body;
+                line-height: 2.4rem;
+                padding: 0 10%;
+            }
+        }
+    }
+    footer {
+        background-color: $water-background;
+        color: $tree-lighter;
+        padding: 10px;
+        text-align: center;
+        p {
+            font-size: $aside;
+        }
+        p.credit {
+            font-style: italic;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

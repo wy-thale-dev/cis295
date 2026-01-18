@@ -1,133 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-:root {
-    font-size: 62.5%;
-}
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 body {
-    background-color: #111;
-    color: #EEE;
-    font-family: "Roboto Slab", serif;
+  background-color: #111;
+  color: #eeeeee;
+  font-family: "Roboto Slab", serif;
+}
+body div#container {
+  display: flex;
+  margin: 2%;
+  gap: 2%;
+}
+body div#container header {
+  overflow: hidden;
+  border-radius: 30px 30px 0 0;
+  min-width: 25%;
+}
+body div#container header figure {
+  background-image: url(../images/PiP-Logo-Header-nobg.png);
+  background-size: 140%;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #000;
+}
+body div#container header h1 {
+  text-align: center;
+  padding: 10px 5px 20px 5px;
+  font-size: 3vw;
+  box-shadow: 2px 2px 8px #111;
+  color: #ebc461;
+  background-color: #000;
+}
+body div#container header nav {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #000;
+}
+body div#container header nav a {
+  color: #ebc461;
+  text-decoration: none;
+  min-width: 50%;
+  padding: 5%;
+  font-size: 2rem;
+  text-align: center;
+  flex-grow: 1;
+  border: 1px solid #ebc461;
+}
+body div#container header nav a:hover {
+  transition: 350ms;
+  color: #f5852f;
+  background: #635850;
+}
+body div#container main {
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 2%;
+  box-shadow: 2px 2px 8px #111;
+}
+body div#container main section.hero {
+  padding-bottom: 10px;
+}
+body div#container main section.hero figure {
+  background-image: url(../images/ginger-cat.jpg);
+  background-size: 120%;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #f5852f;
+}
+body div#container main section.hero figure h1 {
+  font-size: 3vw;
+  position: absolute;
+  top: 28%;
+  left: 15%;
+  text-align: center;
+}
+body div#container main section.hero figure a {
+  font-size: 3vw;
+  text-decoration: none;
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  color: #ebc461;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border: 1px solid #ebc461;
+}
+body div#container main section.hero figure a:hover {
+  transition: 350ms;
+  color: #f5852f;
+  background: #635850;
+}
+body div#container main section.hero section.about-short {
+  margin: 10px 0;
+}
+body div#container main section.hero section.about-short h2 {
+  padding: 1%;
+  font-size: 3vw;
+}
+body div#container main section.hero section.about-short p {
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+body footer {
+  background-color: #000;
+  padding: 2% 5%;
+}
+body footer p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: #635850;
+}
+body footer p.credit {
+  font-style: italic;
 }
 
-div#container {
-    display: flex;
-    margin: 2%;
-    gap: 2%;
+:root {
+  /* variables for glowing edges */
+  --glow-sens: 30;
+  --card-bg: linear-gradient(8deg,var(--dark) 75%, color-mix(in hsl, var(--dark), rgb(255, 255, 255) 2.5%) 75.5%);
+  --blend: soft-light;
+  --glow-blend: plus-lighter;
+  --glow-color: 40deg 80% 80%;
+  --glow-boost: 0%;
 }
 
-header {
-    background-color: #000;
-    overflow: hidden;
-    border-radius: 30px 30px 0 0;
-    min-width: 25%;
-    box-shadow: 6px 6px 4px rgb(15, 15, 15);
+.card {
+  --pads: 40px;
+  --color-sens: calc(var(--glow-sens) + 20);
+  --pointer-°: 45deg;
+  position: relative;
 }
-header figure {
-    background-image: url(../images/PiP-Logo-Header-nobg.png);
-    background-size: 140%;
-    background-position: center;
-    width: 100%;
-    aspect-ratio: 1;
+.card::before, .card::after, .card > .glow {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: opacity 0.25s ease-out;
+  z-index: -1;
 }
-header h1 {
-    text-align: center;
-    padding: 10px 5px 20px 5px;
-    font-size: 3vw;
-    box-shadow: 2px 2px 8px black;
-    color: #ebc461;
+.card:not(:hover):not(.animating)::before, .card:not(:hover):not(.animating)::after, .card:not(:hover):not(.animating) > .glow {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
 }
-
-header nav {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
+.card::before {
+  /* mesh gradient border */
+  border: 1px solid transparent;
+  background: linear-gradient(var(--card-bg) 0 100%) padding-box, linear-gradient(rgba(255, 102, 0, 0) 0% 100%) border-box, radial-gradient(at 80% 55%, hsl(268, 100%, 76%) 0px, transparent 50%) border-box, radial-gradient(at 69% 34%, hsl(349, 100%, 74%) 0px, transparent 50%) border-box, radial-gradient(at 8% 6%, hsl(136, 100%, 78%) 0px, transparent 50%) border-box, radial-gradient(at 41% 38%, hsl(192, 100%, 64%) 0px, transparent 50%) border-box, radial-gradient(at 86% 85%, hsl(186, 100%, 74%) 0px, transparent 50%) border-box, radial-gradient(at 82% 18%, hsl(52, 100%, 65%) 0px, transparent 50%) border-box, radial-gradient(at 51% 4%, hsl(12, 100%, 72%) 0px, transparent 50%) border-box, linear-gradient(#ff7b00 0 100%) border-box;
+  /* opacity increases as pointer gets near edge */
+  opacity: calc((var(--pointer-d) - var(--color-sens)) / (2000 - var(--color-sens)));
+  /* border is masked to a cone, originating from the center towards the pointer */
+  -webkit-mask-image: conic-gradient(from var(--pointer-°) at center, black 25%, transparent 40%, transparent 60%, black 75%);
+          mask-image: conic-gradient(from var(--pointer-°) at center, black 25%, transparent 40%, transparent 60%, black 75%);
 }
-header nav a {
-    color: #ebc461;
-    text-decoration: none;
-    min-width: 50%;
-    padding: 5%;
-    font-size: 2vw;
-    text-align: center;
-    flex-grow: 1;
-    border: 1px solid #ebc461;
+.card::after {
+  /* mesh gradient background */
+  border: 1px solid transparent;
+  background: radial-gradient(at 80% 55%, rgb(255, 102, 0) 0px, transparent 25%) padding-box, radial-gradient(at 69% 34%, hsl(349, 100%, 74%) 0px, transparent 25%) padding-box, radial-gradient(at 8% 6%, hsl(136, 100%, 78%) 0px, transparent 25%) padding-box, radial-gradient(at 41% 38%, hsl(192, 100%, 64%) 0px, transparent 25%) padding-box, radial-gradient(at 86% 85%, hsl(186, 100%, 74%) 0px, transparent 25%) padding-box, radial-gradient(at 82% 18%, hsl(52, 100%, 65%) 0px, transparent 25%) padding-box, radial-gradient(at 51% 4%, hsl(12, 100%, 72%) 0px, transparent 25%) padding-box, linear-gradient(#ff6600 0 100%) padding-box;
+  /* 5 radial masks to create a squircle-cut-out, and then a cone-gradient 
+      originating from the center towards the pointer to highlight the edges */
+  -webkit-mask-image: linear-gradient(to bottom, black, black), radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%), radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%), conic-gradient(from var(--pointer-°) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+          mask-image: linear-gradient(to bottom, black, black), radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%), radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%), conic-gradient(from var(--pointer-°) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+  -webkit-mask-composite: source-out, source-over, source-over, source-over, source-over, source-over;
+          mask-composite: subtract, add, add, add, add, add;
+  /* opacity increases as pointer gets near edge */
+  opacity: calc((var(--pointer-d) - var(--color-sens)) / (100 - var(--color-sens)));
+  mix-blend-mode: var(--blend);
 }
-header nav a:hover {
-    transition: 350ms;
-    color: #EEE;
-    background: #111;
+.card > .glow {
+  /* glowing border edges */
+  --outset: var(--pads);
+  /* outer padding so the glow can overflow the element without being masked */
+  inset: calc(var(--outset) * -1);
+  pointer-events: none;
+  z-index: 1;
+  /* glow is masked to a cone, originating from the center towards the pointer */
+  -webkit-mask-image: conic-gradient(from var(--pointer-°) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+          mask-image: conic-gradient(from var(--pointer-°) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+  /* opacity increases as pointer gets near edge */
+  opacity: calc((var(--pointer-d) - var(--glow-sens)) / (100 - var(--glow-sens)));
+  mix-blend-mode: var(--glow-blend);
 }
-
-main {
-    background-color: #000;
-    overflow: hidden;
-    border-radius: 30px;
-    padding: 2%;
-    box-shadow: 2px 2px 8px black;
-}
-
-section.hero {
-    padding-bottom: 10px;
-}
-section.hero figure {
-    background-image: url(../images/ginger-cat.jpg);
-    background-size: 120%;
-    background-position: center;
-    width: 100%;
-    aspect-ratio: 1;
-    position: relative;
-    border-radius: 30px;
-    overflow: hidden;
-}
-section.hero figure h1 {
-    font-size: 3vw;
-    position: absolute;
-    top: 28%; left: 15%;
-    text-align: center;
-}
-section.hero figure a {
-    font-size: 3vw;
-    text-decoration: none;
-    position: absolute;
-    bottom: 3%; right: 3%;
-    color: #ebc461;
-    background-color: rgba(0, 0, 0, .3);
-    padding: 5px;
-    border: 1px solid #ebc461;
-}
-section.hero figure a:hover {
-    transition: 350ms;
-    color: white;
-    background: #111;
-}
-
-section.about-short {
-    margin: 10px 0;
-}
-.about-short h2 {
-    padding: 1%;
-    font-size: 3vw;
-}
-.about-short p {
-    font-size: 1.7rem;
-    line-height: 2.4rem;
-}
-
-footer {
-    background-color: #000;
-    padding: 2% 5%;
-}
-footer p {
-    font-size: 1.3em;
-    line-height: 2rem;
-    color: #aaa;
-}
-footer p.credit {
-    font-style: italic; 
-}
+.card > .glow::before {
+  content: "";
+  position: absolute;
+  inset: var(--outset);
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px hsl(var(--glow-color)/100%), inset 0 0 1px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 60%)), inset 0 0 3px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 50%)), inset 0 0 6px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 40%)), inset 0 0 15px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 30%)), inset 0 0 25px 2px hsl(var(--glow-color)/calc(var(--glow-boost) + 20%)), inset 0 0 50px 2px hsl(var(--glow-color)/calc(var(--glow-boost) + 10%)), 0 0 1px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 60%)), 0 0 3px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 50%)), 0 0 6px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 40%)), 0 0 15px 0 hsl(var(--glow-color)/calc(var(--glow-boost) + 30%)), 0 0 25px 2px hsl(var(--glow-color)/calc(var(--glow-boost) + 20%)), 0 0 50px 2px hsl(var(--glow-color)/calc(var(--glow-boost) + 10%));
+}/*# sourceMappingURL=styles.css.map */
