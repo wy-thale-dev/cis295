@@ -120,6 +120,9 @@ body footer p.credit {
   font-style: italic;
 }
 
+/* 20% Project - Glowing Edges
+ I wanted to add the glowing edges I found on codepen to the main section of my photography page. I've tinkered with it a bit to get it to work on my page, but a majority of the css and javascript is from the original creator.
+ I think it turned out alright, but I will mess with it further to see if I can change the colors to be more warm/vibrant. */
 :root {
   /* variables for glowing edges */
   --glow-sens: 30;
