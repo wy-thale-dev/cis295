@@ -1,47 +1,179 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body.home {
+  background-color: #ddd;
 }
-:root {
-    font-size: 62.5%;
+body.home header {
+  background-color: #ddd;
+  padding: 5px;
+}
+body.home header h1 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 5px;
+}
+body.home header h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 5px;
+}
+body.home nav.navbar {
+  background-color: #aaa;
+  margin: 0 20px 15px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #444;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+body.home nav.navbar a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  text-align: center;
+  color: #eee;
+  background-color: #444;
+  padding: 10px 7px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px #444;
+}
+body.home nav.navbar a:hover {
+  transition: 200ms;
+  color: #ff7f50;
+  box-shadow: 3px 3px 8px #444;
+}
+body.home main {
+  background-color: #ddd;
+}
+body.home main h1 {
+  text-align: center;
+  padding: 10px;
+  font-size: 2.5rem;
+}
+body.home main section {
+  background-color: #aaa;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+  margin: 0 20px 15px 20px;
+  border-radius: 10px;
+  justify-content: space-between;
+  box-shadow: 2px 2px 4px #444;
+}
+body.home main section a {
+  flex-grow: 1;
+  min-width: 200px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #eee;
+  background-color: #444;
+  padding: 10px 7px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px #444;
+}
+body.home main section a:hover {
+  transition: 200ms;
+  color: #ff7f50;
+  box-shadow: 3px 3px 8px #444;
 }
 
-body {
-    background-color: #eee;
+/* Participation | Layout Logic */
+body.layout {
+  background-color: #ddd;
 }
-header {
-    background-color: #ddd;
-    padding: 5px;
+body.layout header {
+  background-color: #aaa;
+  box-shadow: 2px 2px 4px #444;
+  margin: 10px 20px;
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 10px;
 }
-header h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 5px;
+body.layout header h1 {
+  text-align: center;
+  background-color: #444;
+  font-size: 3rem;
+  padding: 5px;
+  border-radius: 5px;
+  color: #eee;
+  box-shadow: 2px 2px 4px #444;
 }
-header h2 {
-    text-align: center;
-    font-size: 2rem;
-    padding: 5px;
+body.layout header input {
+  max-height: 30px;
+  max-width: 500px;
+  flex-grow: 1;
+  padding: 3px;
+  border-radius: 10px;
+  border: 2px solid #444;
+  box-shadow: 2px 2px 4px #444;
+  font-size: 1.8rem;
 }
-
-nav.navbar {
-    background-color: #aaa;
-    padding: 10px;
-    display: flex;
-    justify-content: space-evenly;
+body.layout header nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 200px;
 }
-.navbar a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #fff;
-    background-color: #444;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 8px black;
+body.layout header nav.navbar a {
+  font-size: 1.8rem;
+  text-align: center;
+  text-decoration: none;
+  color: #eee;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #444;
 }
-.navbar a:hover {
-    transition: 200ms;
-    color: coral;
-    box-shadow: 3px 3px 8px black;
+body.layout header nav.navbar a:hover {
+  transition: 200ms;
+  color: #ff7f50;
+  box-shadow: 3px 3px 8px #444;
 }
+body.layout main {
+  padding: 15px 20px;
+  display: grid;
+  grid-template-columns: 30vw auto 30vw;
+  gap: 3vw;
+}
+body.layout main article {
+  background-color: #aaa;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #444;
+}
+body.layout main article h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 5px;
+}
+body.layout main article p {
+  font-size: 1.6rem;
+  padding: 5px;
+}
+body.layout main article figure {
+  background-image: url(/participation/images/skyscraper-roof.jpg);
+  background-size: cover;
+  width: auto;
+  aspect-ratio: 1;
+  border-radius: 10px;
+}
+body.layout main article figure figcaption {
+  font-size: 1.6rem;
+  padding: 5px;
+}
+body.layout footer {
+  background-color: #444;
+  color: #eee;
+  padding: 15px 20px;
+  font-size: 1.6rem;
+}
+body.layout footer a {
+  color: #ff7f50;
+}
+@media screen and (max-width: 700px) {
+  body.layout main {
+    grid-template-columns: auto auto;
+  }
+}/*# sourceMappingURL=styles.css.map */
