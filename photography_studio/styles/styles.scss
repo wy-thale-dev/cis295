@@ -4,12 +4,13 @@
 $dark: #000;
 $background: #111;
 $light: #eeeeee;
-$middle: #635850;
+$middle: #222;
 $accent1: #ebc461;
 $accent2: #f5852f;
 
-$heading: 3vw;
+$heading: 3rem;
 $body: 2rem;
+$aside: 1.7rem; 
 $footer: 1.3rem;
 
 body {
@@ -21,43 +22,48 @@ body {
         margin: 2%;
         gap: 2%;
         header {
-            overflow: hidden;
             border-radius: 30px 30px 0 0;
-            min-width: 25%;
-            figure {
-                background-image: url(../images/PiP-Logo-Header-nobg.png);
-                background-size: 140%;
-                background-position: center;
-                width: 100%;
-                aspect-ratio: 1;
-                background-color: $dark;
-            }
-            h1 {
-                text-align: center;
-                padding: 10px 5px 20px 5px;
-                font-size: $heading;
-                box-shadow: 2px 2px 8px $background;
-                color: $accent1;
-                background-color: $dark;
-            }
-            nav {
-                width: 100%;
-                display: flex;
-                flex-flow: row wrap;
-                background-color: $dark;
-                a {
-                    color: $accent1;
-                    text-decoration: none;
-                    min-width: 50%;
-                    padding: 5%;
-                    font-size: $body;
+            min-width: 200px;
+            div {
+                position: sticky;
+                overflow: hidden;
+                border-radius: 30px 30px 0 0;
+                top: 10px;
+                figure {
+                    background-image: url(../images/PiP-Logo-Header-nobg.png);
+                    background-size: 140%;
+                    background-position: center;
+                    width: 100%;
+                    aspect-ratio: 1;
+                    background-color: $dark;
+                }
+                h1 {
                     text-align: center;
-                    flex-grow: 1;
-                    border: 1px solid $accent1;
-                    &:hover {
-                        transition: 350ms;
-                        color: $accent2;
-                        background: $middle;
+                    padding: 10px 5px 20px 5px;
+                    font-size: $heading;
+                    box-shadow: 2px 2px 8px $background;
+                    color: $accent1;
+                    background-color: $dark;
+                }
+                nav {
+                    width: 100%;
+                    display: flex;
+                    flex-flow: row wrap;
+                    background-color: $dark;
+                    a {
+                        color: $accent1;
+                        text-decoration: none;
+                        min-width: 50%;
+                        padding: 5%;
+                        font-size: $body;
+                        text-align: center;
+                        flex-grow: 1;
+                        border: 1px solid $accent1;
+                        &:hover {
+                            transition: 350ms;
+                            color: $accent2;
+                            background: $middle;
+                        }
                     }
                 }
             }
@@ -114,30 +120,162 @@ body {
                     }
                 }
             }
+            article.showcase {
+                display: grid;
+                grid-template-columns: 20% 20% 20% 20% 20%;
+                row-gap: 10px;
+                figure {
+                    border: 2px solid $accent2;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    max-height: 400px;
+                }
+                figcaption {
+                    padding: 30px 3vw;
+                    h2 {
+                        font-size: $heading;
+                        border-bottom: 1px dashed $accent2;
+                        padding: 5px 0;
+                    }
+                    p {
+                        border-bottom: 2px dotted $middle;
+                        font-size: $aside;
+                        padding: 5px 0;
+                    }
+                }
+                figure.dog {
+                    background-image: url(../images/dog.jpg);
+                    width: 100%; height: auto;
+                    background-position: center;
+                    aspect-ratio: 1/2;
+                    background-size: cover;
+                    grid-column: span 2;
+                }
+                figcaption.dog {
+                    grid-column: span 3;
+                }
+                figure.cat {
+                    background-image: url(../images/cat.jpg);
+                    width: 100%; height: auto;
+                    background-position: center;
+                    aspect-ratio: 1/2;
+                    background-size: cover;
+                    grid-column: span 2;
+                }
+                figcaption.cat {
+                    grid-column: span 3;
+                }
+                figure.fish {
+                    background-image: url(../images/fish.jpg);
+                    width: 100%; height: auto;
+                    background-position: center;
+                    aspect-ratio: 2/1;
+                    background-size: cover;
+                    grid-column: span 5;
+                }
+                figcaption.fish {
+                    grid-column: span 5;
+                    padding: 20px 3vw;
+                }
+                figure.rodent {
+                    background-image: url(../images/rodent.jpg);
+                    width: 100%; height: auto;
+                    background-position: center;
+                    aspect-ratio: 1/2;
+                    background-size: cover;
+                    grid-column: span 2;
+                }
+                figcaption.rodent {
+                    grid-column: span 3;
+                }
+            }
         }
     }
     footer {
         background-color: $dark;
+        display: flex;
+        flex-flow: row wrap;
         padding: 2% 5%;
+        text-align: center;
         p {
             font-size: $footer;
             line-height: 2rem;
-            color: $middle;
+            color: $light;
+            width: 100%;
         }
         p.credit {
             font-style: italic; 
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        div#container {
+            display: block;
+            header {
+                margin: 0 0 20px 0;
+                background-color: $dark;
+                div {
+                    position: relative;
+                    figure {
+                        width: 50%;
+                        margin: 0px auto;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 700px) {
+        div#container {
+            main {
+                article.showcase {
+                    figure.dog {
+                        grid-column: span 5;
+                        order: 1;
+                    }
+                    figcaption.dog {
+                        grid-column: span 5;
+                        order: 2;
+                    }
+                    figure.cat {
+                        grid-column: span 5;
+                        order: 3;
+                        background-position: top;
+                    }
+                    figcaption.cat {
+                        grid-column: span 5;
+                        order: 4;
+                    }
+                    figure.fish {
+                        grid-column: span 5;
+                        order: 5;
+                    }
+                    figcaption.fish {
+                        grid-column: span 5;
+                        order: 6;
+                        padding: 30px 3vw;
+                    }
+                    figure.rodent {
+                        grid-column: span 5;
+                        order: 7;
+                    }
+                    figcaption.rodent {
+                        grid-column: span 5;
+                        order: 8;
+                    }
+                }
+            }
         }
     }
 }
 
 
 
-
-
-/* 20% Project - Glowing Edges
+/* 20% Project 1 - Glowing Edges
  I wanted to add the glowing edges I found on codepen to the main section of my photography page. I've tinkered with it a bit to get it to work on my page, but a majority of the css and javascript is from the original creator.
  I think it turned out alright, but I will mess with it further to see if I can change the colors to be more warm/vibrant. */
 
+ /* 20% Project 2 - Sticky Navbar 
+ I made it so that the navbar sticks to the side of the screen when on a 1000+ screenwidth. I had to change some elements that were dynamic and make them static so that the sidebar would always be the same size and wouldn't hide any elements offscreen while scolling.
+ I like how it turned out, and it was relatively easy. I just had to create a new div and set it to sticky. I did have to disable the overflow: hiddeen; on the parent object, butthat was the only complication I ran into. */
 
 :root {
     /* variables for glowing edges */

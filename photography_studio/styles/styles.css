@@ -11,11 +11,16 @@ body div#container {
   gap: 2%;
 }
 body div#container header {
+  border-radius: 30px 30px 0 0;
+  min-width: 200px;
+}
+body div#container header div {
+  position: sticky;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  min-width: 25%;
+  top: 10px;
 }
-body div#container header figure {
+body div#container header div figure {
   background-image: url(../images/PiP-Logo-Header-nobg.png);
   background-size: 140%;
   background-position: center;
@@ -23,21 +28,21 @@ body div#container header figure {
   aspect-ratio: 1;
   background-color: #000;
 }
-body div#container header h1 {
+body div#container header div h1 {
   text-align: center;
   padding: 10px 5px 20px 5px;
-  font-size: 3vw;
+  font-size: 3rem;
   box-shadow: 2px 2px 8px #111;
   color: #ebc461;
   background-color: #000;
 }
-body div#container header nav {
+body div#container header div nav {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   background-color: #000;
 }
-body div#container header nav a {
+body div#container header div nav a {
   color: #ebc461;
   text-decoration: none;
   min-width: 50%;
@@ -47,10 +52,10 @@ body div#container header nav a {
   flex-grow: 1;
   border: 1px solid #ebc461;
 }
-body div#container header nav a:hover {
+body div#container header div nav a:hover {
   transition: 350ms;
   color: #f5852f;
-  background: #635850;
+  background: #222;
 }
 body div#container main {
   background-color: #000;
@@ -74,14 +79,14 @@ body div#container main section.hero figure {
   border: 2px solid #f5852f;
 }
 body div#container main section.hero figure h1 {
-  font-size: 3vw;
+  font-size: 3rem;
   position: absolute;
   top: 28%;
   left: 15%;
   text-align: center;
 }
 body div#container main section.hero figure a {
-  font-size: 3vw;
+  font-size: 3rem;
   text-decoration: none;
   position: absolute;
   bottom: 3%;
@@ -94,35 +99,167 @@ body div#container main section.hero figure a {
 body div#container main section.hero figure a:hover {
   transition: 350ms;
   color: #f5852f;
-  background: #635850;
+  background: #222;
 }
 body div#container main section.hero section.about-short {
   margin: 10px 0;
 }
 body div#container main section.hero section.about-short h2 {
   padding: 1%;
-  font-size: 3vw;
+  font-size: 3rem;
 }
 body div#container main section.hero section.about-short p {
   font-size: 2rem;
   line-height: 2.8rem;
 }
+body div#container main article.showcase {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  row-gap: 10px;
+}
+body div#container main article.showcase figure {
+  border: 2px solid #f5852f;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 400px;
+}
+body div#container main article.showcase figcaption {
+  padding: 30px 3vw;
+}
+body div#container main article.showcase figcaption h2 {
+  font-size: 3rem;
+  border-bottom: 1px dashed #f5852f;
+  padding: 5px 0;
+}
+body div#container main article.showcase figcaption p {
+  border-bottom: 2px dotted #222;
+  font-size: 1.7rem;
+  padding: 5px 0;
+}
+body div#container main article.showcase figure.dog {
+  background-image: url(../images/dog.jpg);
+  width: 100%;
+  height: auto;
+  background-position: center;
+  aspect-ratio: 1/2;
+  background-size: cover;
+  grid-column: span 2;
+}
+body div#container main article.showcase figcaption.dog {
+  grid-column: span 3;
+}
+body div#container main article.showcase figure.cat {
+  background-image: url(../images/cat.jpg);
+  width: 100%;
+  height: auto;
+  background-position: center;
+  aspect-ratio: 1/2;
+  background-size: cover;
+  grid-column: span 2;
+}
+body div#container main article.showcase figcaption.cat {
+  grid-column: span 3;
+}
+body div#container main article.showcase figure.fish {
+  background-image: url(../images/fish.jpg);
+  width: 100%;
+  height: auto;
+  background-position: center;
+  aspect-ratio: 2/1;
+  background-size: cover;
+  grid-column: span 5;
+}
+body div#container main article.showcase figcaption.fish {
+  grid-column: span 5;
+  padding: 20px 3vw;
+}
+body div#container main article.showcase figure.rodent {
+  background-image: url(../images/rodent.jpg);
+  width: 100%;
+  height: auto;
+  background-position: center;
+  aspect-ratio: 1/2;
+  background-size: cover;
+  grid-column: span 2;
+}
+body div#container main article.showcase figcaption.rodent {
+  grid-column: span 3;
+}
 body footer {
   background-color: #000;
+  display: flex;
+  flex-flow: row wrap;
   padding: 2% 5%;
+  text-align: center;
 }
 body footer p {
   font-size: 1.3rem;
   line-height: 2rem;
-  color: #635850;
+  color: #eeeeee;
+  width: 100%;
 }
 body footer p.credit {
   font-style: italic;
 }
+@media screen and (max-width: 1000px) {
+  body div#container {
+    display: block;
+  }
+  body div#container header {
+    margin: 0 0 20px 0;
+    background-color: #000;
+  }
+  body div#container header div {
+    position: relative;
+  }
+  body div#container header div figure {
+    width: 50%;
+    margin: 0px auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  body div#container main article.showcase figure.dog {
+    grid-column: span 5;
+    order: 1;
+  }
+  body div#container main article.showcase figcaption.dog {
+    grid-column: span 5;
+    order: 2;
+  }
+  body div#container main article.showcase figure.cat {
+    grid-column: span 5;
+    order: 3;
+    background-position: top;
+  }
+  body div#container main article.showcase figcaption.cat {
+    grid-column: span 5;
+    order: 4;
+  }
+  body div#container main article.showcase figure.fish {
+    grid-column: span 5;
+    order: 5;
+  }
+  body div#container main article.showcase figcaption.fish {
+    grid-column: span 5;
+    order: 6;
+    padding: 30px 3vw;
+  }
+  body div#container main article.showcase figure.rodent {
+    grid-column: span 5;
+    order: 7;
+  }
+  body div#container main article.showcase figcaption.rodent {
+    grid-column: span 5;
+    order: 8;
+  }
+}
 
-/* 20% Project - Glowing Edges
+/* 20% Project 1 - Glowing Edges
  I wanted to add the glowing edges I found on codepen to the main section of my photography page. I've tinkered with it a bit to get it to work on my page, but a majority of the css and javascript is from the original creator.
  I think it turned out alright, but I will mess with it further to see if I can change the colors to be more warm/vibrant. */
+/* 20% Project 2 - Sticky Navbar 
+I made it so that the navbar sticks to the side of the screen when on a 1000+ screenwidth. I had to change some elements that were dynamic and make them static so that the sidebar would always be the same size and wouldn't hide any elements offscreen while scolling.
+I like how it turned out, and it was relatively easy. I just had to create a new div and set it to sticky. I did have to disable the overflow: hiddeen; on the parent object, butthat was the only complication I ran into. */
 :root {
   /* variables for glowing edges */
   --glow-sens: 30;

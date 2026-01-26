@@ -12,6 +12,7 @@ $dark-background: #000;
 
 /* Typography */
 $heading: 4rem;
+$subheading: 3rem;
 $anchor: 2rem;
 $body: 2rem;
 $aside: 1.7rem;
@@ -25,20 +26,23 @@ body {
         margin: 10px 10px 0 10px;
         border-radius: 60px 60px 0 0;
         display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
         padding: 3px;
         overflow: hidden;
         figure {
             background-image: url(../images/MC_Logo_Header.png);
-            min-width: 200px;
+            width: 33vw;
             aspect-ratio: 1408/768;
             background-size: cover;
         }
         figcaption {
             display: flex;
             align-items: center;
+            max-width: 50vw;
             h1 {
                 text-align: center;
-                padding: 10px;
+                padding: 10px 20px 10px 10px;
                 font-size: $heading;
             }
         }
@@ -125,20 +129,82 @@ body {
                 padding: 0 10%;
             }
         }
+        section.trainer-preview {
+            div {
+                display: grid;
+                gap: 1vw;
+                grid-template-columns: 33% auto auto;
+                article {
+                    border: 4px solid $tree-darker;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    img {
+                        max-width: 100%;
+                    }
+                    h2 {
+                        font-size: $subheading;
+                    }
+                    p {
+                        font-size: $body;
+                        padding: 1vw;
+                    }
+                }
+            }
+        }
     }
     footer {
         background-color: $water-background;
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
         color: $tree-lighter;
         padding: 10px;
         text-align: center;
         p {
             font-size: $aside;
+            width: 30%;
+            line-height: 3rem;
         }
         p.credit {
             font-style: italic;
         }
     }
+    @media screen and (max-width: 750px) {
+        header {
+            align-content: center;
+            figure {
+                width: 100%;
+            }
+            figcaption {
+                max-width: 100%;
+                margin: 2px auto;
+            }
+        }
+        main {
+            section.trainer-preview {
+                div {
+                    grid-template-columns: auto auto;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 500px) {
+        main {
+            section.trainer-preview {
+                div {
+                    grid-template-columns: auto;
+                }
+            }
+        }
+        footer {
+            p {
+                min-width: 100%;
+            }
+        }
+    }
 }
+
+
 
 
 
