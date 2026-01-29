@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 body.home {
   background-color: #ddd;
 }
@@ -22,6 +23,7 @@ body.home nav.navbar {
   box-shadow: 2px 2px 4px #444;
   padding: 10px;
   display: flex;
+  gap: 10px;
   justify-content: space-evenly;
 }
 body.home nav.navbar a {
@@ -52,6 +54,7 @@ body.home main section {
   display: flex;
   flex-flow: row wrap;
   padding: 10px;
+  gap: 10px;
   margin: 0 20px 15px 20px;
   border-radius: 10px;
   justify-content: space-between;
@@ -59,7 +62,7 @@ body.home main section {
 }
 body.home main section a {
   flex-grow: 1;
-  min-width: 200px;
+  width: 49%;
   text-align: center;
   text-decoration: none;
   font-size: 1.8rem;
@@ -176,4 +179,98 @@ body.layout footer a {
   body.layout main {
     grid-template-columns: auto auto;
   }
+}
+
+body.style-guide {
+  background-color: #ddd;
+}
+body.style-guide header {
+  background-color: #ddd;
+  padding: 5px;
+}
+body.style-guide header h1 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 5px;
+}
+body.style-guide header h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 5px;
+}
+body.style-guide main {
+  margin: 0 20px;
+}
+body.style-guide main section {
+  background-color: #aaa;
+  box-shadow: 2px 2px 4px #444;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+body.style-guide main section.color {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+body.style-guide main section.color div {
+  border: 2px solid #444;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #444;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+body.style-guide main section.color div h2 {
+  font-size: 2.5rem;
+  padding: 5px;
+  background-color: #444;
+  color: #eee;
+}
+body.style-guide main section.color div p {
+  font-size: 1.6rem;
+  padding: 5px;
+  background-color: #444;
+  color: #eee;
+}
+body.style-guide main section.color div:nth-child(1) {
+  background-color: #5f6749;
+}
+body.style-guide main section.color div:nth-child(2) {
+  background-color: #b88d48;
+}
+body.style-guide main section.color div:nth-child(3) {
+  background-color: #8f967e;
+}
+body.style-guide main section.color div:nth-child(4) {
+  background-color: #020713;
+}
+body.style-guide main section.color div:nth-child(5) {
+  background-color: #4a5039;
+}
+body.style-guide main section.color div:nth-child(6) {
+  background-color: #95cbf7;
+}
+body.style-guide main section.color div:nth-child(7) {
+  background-color: #eef0f2;
+}
+body.style-guide main section.font {
+  font-family: "Ubuntu", sans-serif;
+}
+body.style-guide main section.font h1 {
+  font-size: 4rem;
+  color: #020713;
+  padding: 10px;
+  background-color: #b88d48;
+  border-radius: 10px;
+  text-align: center;
+}
+body.style-guide main section.font h2 {
+  font-size: 3rem;
+  color: #020713;
+  padding: 10px;
+}
+body.style-guide main section.font p {
+  font-size: 2rem;
+  color: #020713;
+  padding: 10px;
 }/*# sourceMappingURL=styles.css.map */

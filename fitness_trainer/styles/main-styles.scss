@@ -2,13 +2,12 @@
 
 /* Color Palette */
 $light-background: #95cbf7;
-$bright-background: #fafafa;
-$earth-background: #dcad7f;
+$bright-background: #eef0f2;
+$earth-background: #b88d48;
 $tree-background: #5f6749;
 $tree-darker: #4a5039;
 $tree-lighter: #8F967E;
-$water-background: #213763;
-$dark-background: #000;
+$dark-background: #020713;
 
 /* Typography */
 $heading: 4rem;
@@ -44,11 +43,15 @@ body {
                 text-align: center;
                 padding: 10px 20px 10px 10px;
                 font-size: $heading;
+                color: $dark-background;
+                background-color: $earth-background;
+                border-radius: 10px;
             }
         }
     }
     nav.navbar {
         background-color: $earth-background;
+        border-radius: 5px 5px 0 0;
         width: auto;
         display: flex;
         justify-content: space-around;
@@ -73,7 +76,6 @@ body {
     section.hero {
         background-color: $tree-background;
         padding: 10px 0 10px 0;
-        border-radius: 5px 5px 0 0;
         overflow: hidden;
         margin: 0;
         figure {
@@ -138,6 +140,8 @@ body {
                     border: 4px solid $tree-darker;
                     border-radius: 10px;
                     overflow: hidden;
+                    background-color: $tree-darker;
+                    color: $bright-background;
                     img {
                         max-width: 100%;
                     }
@@ -153,11 +157,11 @@ body {
         }
     }
     footer {
-        background-color: $water-background;
+        background-color: $dark-background;
         display: flex;
         justify-content: space-around;
         flex-flow: row wrap;
-        color: $tree-lighter;
+        color: $bright-background;
         padding: 10px;
         text-align: center;
         p {

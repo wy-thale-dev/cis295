@@ -3,11 +3,11 @@
 /* Typography */
 body {
   background-color: #95cbf7;
-  color: #000;
+  color: #020713;
   font-family: "Ubuntu", sans-serif;
 }
 body header {
-  background-color: #fafafa;
+  background-color: #eef0f2;
   margin: 10px 10px 0 10px;
   border-radius: 60px 60px 0 0;
   display: flex;
@@ -31,9 +31,13 @@ body header figcaption h1 {
   text-align: center;
   padding: 10px 20px 10px 10px;
   font-size: 4rem;
+  color: #020713;
+  background-color: #b88d48;
+  border-radius: 10px;
 }
 body nav.navbar {
-  background-color: #dcad7f;
+  background-color: #b88d48;
+  border-radius: 5px 5px 0 0;
   width: auto;
   display: flex;
   justify-content: space-around;
@@ -45,7 +49,7 @@ body nav.navbar a {
   text-align: center;
   font-size: 2rem;
   background-color: #5f6749;
-  color: #fafafa;
+  color: #eef0f2;
   padding: 5px;
   border-radius: 10px 10px 0 0;
 }
@@ -57,7 +61,6 @@ body nav.navbar a:hover {
 body section.hero {
   background-color: #5f6749;
   padding: 10px 0 10px 0;
-  border-radius: 5px 5px 0 0;
   overflow: hidden;
   margin: 0;
 }
@@ -73,7 +76,7 @@ body section.hero figure h1 {
   position: absolute;
   top: 20%;
   left: 10%;
-  background-color: rgba(250, 250, 250, 0.5);
+  background-color: rgba(238, 240, 242, 0.5);
   padding: 5px;
   border-radius: 10px;
   font-size: 4rem;
@@ -84,12 +87,12 @@ body section.hero figure a {
   left: 15%;
   text-align: center;
   text-decoration: none;
-  color: #fafafa;
+  color: #eef0f2;
   background-color: #5f6749;
   font-size: 2rem;
   padding: 8px;
   border-radius: 10px;
-  box-shadow: 0 2px 2px #000;
+  box-shadow: 0 2px 2px #020713;
 }
 body section.hero figure a:hover {
   transition: 250ms;
@@ -126,6 +129,8 @@ body main section.trainer-preview div article {
   border: 4px solid #4a5039;
   border-radius: 10px;
   overflow: hidden;
+  background-color: #4a5039;
+  color: #eef0f2;
 }
 body main section.trainer-preview div article img {
   max-width: 100%;
@@ -138,11 +143,11 @@ body main section.trainer-preview div article p {
   padding: 1vw;
 }
 body footer {
-  background-color: #213763;
+  background-color: #020713;
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
-  color: #8F967E;
+  color: #eef0f2;
   padding: 10px;
   text-align: center;
 }
