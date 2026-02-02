@@ -52,10 +52,16 @@ body div#container header div nav a {
   flex-grow: 1;
   border: 1px solid #ebc461;
 }
+body div#container header div nav a:focus {
+  color: #f5852f;
+  background: #222;
+  outline: 2px dashed #f5852f;
+}
 body div#container header div nav a:hover {
   transition: 350ms;
   color: #f5852f;
   background: #222;
+  border: 1px solid #f5852f;
 }
 body div#container main {
   background-color: #000;
@@ -84,6 +90,7 @@ body div#container main section.hero figure h1 {
   top: 28%;
   left: 15%;
   text-align: center;
+  color: #ebc461;
 }
 body div#container main section.hero figure a {
   font-size: 3rem;
@@ -96,17 +103,23 @@ body div#container main section.hero figure a {
   padding: 5px;
   border: 1px solid #ebc461;
 }
+body div#container main section.hero figure a:focus {
+  color: #f5852f;
+  background: #222;
+  outline: 2px dashed #f5852f;
+}
 body div#container main section.hero figure a:hover {
   transition: 350ms;
   color: #f5852f;
   background: #222;
+  border: 1px solid #f5852f;
 }
 body div#container main section.hero section.about-short {
   margin: 10px 0;
 }
 body div#container main section.hero section.about-short h2 {
   padding: 1%;
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 body div#container main section.hero section.about-short p {
   font-size: 2rem;
@@ -127,7 +140,7 @@ body div#container main article.showcase figcaption {
   padding: 30px 3vw;
 }
 body div#container main article.showcase figcaption h2 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   border-bottom: 1px dashed #f5852f;
   padding: 5px 0;
 }

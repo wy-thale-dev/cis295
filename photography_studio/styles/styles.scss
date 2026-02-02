@@ -9,6 +9,7 @@ $accent1: #ebc461;
 $accent2: #f5852f;
 
 $heading: 3rem;
+$subheading: 2.8rem;
 $body: 2rem;
 $aside: 1.7rem; 
 $footer: 1.3rem;
@@ -59,10 +60,16 @@ body {
                         text-align: center;
                         flex-grow: 1;
                         border: 1px solid $accent1;
+                        &:focus {
+                            color: $accent2;
+                            background: $middle;
+                            outline: 2px dashed $accent2;
+                        }
                         &:hover {
                             transition: 350ms;
                             color: $accent2;
                             background: $middle;
+                            border: 1px solid $accent2;
                         }
                     }
                 }
@@ -91,6 +98,7 @@ body {
                         position: absolute;
                         top: 28%; left: 15%;
                         text-align: center;
+                        color: $accent1;
                     }
                     a {
                         font-size: $heading;
@@ -101,10 +109,16 @@ body {
                         background-color: rgba(0, 0, 0, .3);
                         padding: 5px;
                         border: 1px solid $accent1;
+                        &:focus {
+                            color: $accent2;
+                            background: $middle;
+                            outline: 2px dashed $accent2;
+                        }
                         &:hover {
                             transition: 350ms;
                             color: $accent2;
                             background: $middle;
+                            border: 1px solid $accent2;
                         }
                     }
                 }
@@ -112,7 +126,7 @@ body {
                     margin: 10px 0;
                     h2 {
                         padding: 1%;
-                        font-size: $heading;
+                        font-size: $subheading;
                     }
                     p {
                         font-size: $body;
@@ -133,7 +147,7 @@ body {
                 figcaption {
                     padding: 30px 3vw;
                     h2 {
-                        font-size: $heading;
+                        font-size: $subheading;
                         border-bottom: 1px dashed $accent2;
                         padding: 5px 0;
                     }
