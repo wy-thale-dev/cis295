@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Wyatt Thale">
+        <meta name="description" content="This page contains an example of a swipe UI inspired by Scott Tolinksi on the Syntax.fm podcast.">
+        <link rel="stylesheet" href="../styles/reset-rule.css">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <title>Industry Pulse - Wyatt Thale</title>
+    </head>
+    <body class="pulse">
+        <header>
+            <h1>Participation | Industry Pulse</h1>
+            <h2>Swipe UI with only CSS</h2>
+        </header>
+        <main>
+            <div class="swipe" id="swipe">
+                <div class="left">
+                    <p>This is the left item</p>
+                </div>
+                <div class="center">
+                    <p>This is the center item of the swiper. This UI doesn't snap to the edges.</p>
+                </div>
+                <div class="right">
+                    <p>This is the right item</p>
+                </div>
+            </div>
+            <h2>Swipe UI with Javascript</h2>
+            <div class="swipe hold">
+                <div class="left">
+                    <p>Without the Javascript, it would default to this item</p>
+                </div>
+                <div class="center">
+                    <p>This UI snaps to the edges and uses Javascript to start at the center position</p>
+                </div>
+                <div class="right">
+                    <p>This is still the right item</p>
+                </div>
+            </div>
+            <h2>Swipe UI with Container Type</h2>
+            <div class="swipe hold cqw">
+                <div class="left">
+                    <p>This is the left item</p>
+                </div>
+                <div class="center">
+                    <p>Using container-type: inline-size; on the center item we can easily change the width of the UI</p>
+                </div>
+                <div class="right">
+                    <p>This is the right item</p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

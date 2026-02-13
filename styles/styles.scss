@@ -192,6 +192,7 @@ body.layout {
     }
 }
 
+/* Participation | Style Guide */
 body.style-guide {
     background-color: $medium;
     header {
@@ -286,4 +287,94 @@ body.style-guide {
     }
 }
 
+/* Participation | Industry Pulse */
+body.pulse {
+    background-color: $medium;
+    header {
+        background-color: $medium;
+        padding: 5px;
+        h1 {
+            text-align: center;
+            font-size: $heading;
+            padding: 5px;
+        }
+        h2 {
+            text-align: center;
+            font-size: $subheading;
+            padding: 5px;
+        }
+    }
+    main {
+        .swipe {
+            background-color: $semi-dark;
+            box-shadow: 2px 2px 4px $dark;
+            container-type: inline-size;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            div.left {
+                background-color: $highlight;
+                width: 350px;
+                p {
+                    text-align: center;
+                    margin: 6px;
+                    padding: 2px;
+                    font-size: $paragraph;
+                    border-radius: 8px;
+                    border: 2px solid $dark;
+                }
+            }
+            div.right {
+                background-color: $dark;
+                width: 350px;
+                p {
+                    text-align: center;
+                    margin: 6px;
+                    padding: 2px;
+                    background-color: $dark;
+                    color: $bright;
+                    font-size: $paragraph;
+                    border-radius: 8px;
+                    border: 2px solid $highlight;
+                }
+            }
+            div.center {
+                width: 100vw;
+                p {
+                    padding: 8px;
+                    font-size: $paragraph;
+                    text-align: center;
+                }
+                scroll-snap-align: center;
+            }
+        }
+        h2 {
+            text-align: center;
+            font-size: $subheading;
+            padding: 15px 5px 5px 5px;
+            background-color: $medium;
+        }
+        .hold {
+            div.left {
+                animation: scroll_hold 0.0001s forwards;
+            }
+            div.right {
+                scroll-snap-align: end;
+            }
+        }
+        .cqw {
+            width: 400px;
+            margin: 0 auto;
+            div.center {
+                width: 100cqw;
+            }
+        }
+    }
+}
 
+@keyframes scroll_hold {
+    to {
+        scroll-snap-align: start;
+    }
+}

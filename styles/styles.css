@@ -181,6 +181,7 @@ body.layout footer a {
   }
 }
 
+/* Participation | Style Guide */
 body.style-guide {
   background-color: #ddd;
 }
@@ -273,4 +274,92 @@ body.style-guide main section.font p {
   font-size: 2rem;
   color: #020713;
   padding: 10px;
+}
+
+/* Participation | Industry Pulse */
+body.pulse {
+  background-color: #ddd;
+}
+body.pulse header {
+  background-color: #ddd;
+  padding: 5px;
+}
+body.pulse header h1 {
+  text-align: center;
+  font-size: 3rem;
+  padding: 5px;
+}
+body.pulse header h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 5px;
+}
+body.pulse main .swipe {
+  background-color: #aaa;
+  box-shadow: 2px 2px 4px #444;
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+body.pulse main .swipe div.left {
+  background-color: #ff7f50;
+  width: 350px;
+}
+body.pulse main .swipe div.left p {
+  text-align: center;
+  margin: 6px;
+  padding: 2px;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  border: 2px solid #444;
+}
+body.pulse main .swipe div.right {
+  background-color: #444;
+  width: 350px;
+}
+body.pulse main .swipe div.right p {
+  text-align: center;
+  margin: 6px;
+  padding: 2px;
+  background-color: #444;
+  color: #eee;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  border: 2px solid #ff7f50;
+}
+body.pulse main .swipe div.center {
+  width: 100vw;
+  scroll-snap-align: center;
+}
+body.pulse main .swipe div.center p {
+  padding: 8px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+body.pulse main h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 15px 5px 5px 5px;
+  background-color: #ddd;
+}
+body.pulse main .hold div.left {
+  animation: scroll_hold 0.0001s forwards;
+}
+body.pulse main .hold div.right {
+  scroll-snap-align: end;
+}
+body.pulse main .cqw {
+  width: 400px;
+  margin: 0 auto;
+}
+body.pulse main .cqw div.center {
+  width: 100cqw;
+}
+
+@keyframes scroll_hold {
+  to {
+    scroll-snap-align: start;
+  }
 }/*# sourceMappingURL=styles.css.map */
