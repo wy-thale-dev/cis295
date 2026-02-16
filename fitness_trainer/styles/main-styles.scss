@@ -22,7 +22,7 @@ I added some links to the trainers as well so that there was something worth ski
 It is also fixed to teh top of the webpage so that it always appears no matter where on teh page you are. */
 
 /* Assignment | Cutting Edge Implementation
-I read the article "CSS Intelligence: Speculating On The Future Of A Smarter Language" by Gabriel Shoyombo on Smashing Magazine's website. It discussed using container queries, and I implemented them on the trainers section. Originally, the images took up the full width of the articles, but they were often really large. I still liked how they looked at 100%, but only when the articles were thin. So, I set each article to be container-type inline-size and made the images shrink and center when the articles exceeded a width of 350px, using cqw units as well since settign the parent's container-type made them usable. */
+I read the article "CSS Intelligence: Speculating On The Future Of A Smarter Language" by Gabriel Shoyombo on Smashing Magazine's website. It discussed using container queries, and I implemented them on the trainers section. Originally, the images took up the full width of the articles, but they were often really large. I still liked how they looked at 100%, but only when the articles were thin. So, I set each article to be container-type inline-size and made the images shrink and center when the articles exceeded a width of 350px, using cqw units as well since setting the parent's container-type made them usable. */
 
 body {
     background-color: $light-background;
