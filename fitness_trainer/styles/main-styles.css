@@ -5,6 +5,8 @@
 I added a link at the top of the page which is only visible when focused. This way, the button is only visbile to those who are navigating via keyboard and won't change the intended design of the website.
 I added some links to the trainers as well so that there was something worth skipping to beyond just text. I also added a smooth transition for the link appearing on screen, and tried to match it to the color scheme.
 It is also fixed to teh top of the webpage so that it always appears no matter where on teh page you are. */
+/* Assignment | Cutting Edge Implementation
+I read the article "CSS Intelligence: Speculating On The Future Of A Smarter Language" by Gabriel Shoyombo on Smashing Magazine's website. It discussed using container queries, and I implemented them on the trainers section. Originally, the images took up the full width of the articles, but they were often really large. I still liked how they looked at 100%, but only when the articles were thin. So, I set each article to be container-type inline-size and made the images shrink and center when the articles exceeded a width of 350px, using cqw units as well since settign the parent's container-type made them usable. */
 body {
   background-color: #95cbf7;
   color: #020713;
@@ -155,7 +157,7 @@ body main#main section p {
 body main#main section.trainer-preview div {
   display: grid;
   gap: 2vw;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
 }
 body main#main section.trainer-preview div article {
   border: 4px solid #4a5039;
@@ -163,16 +165,17 @@ body main#main section.trainer-preview div article {
   overflow: hidden;
   background-color: #4a5039;
   color: #eef0f2;
+  container-type: inline-size;
 }
 body main#main section.trainer-preview div article img {
-  max-width: 100%;
+  max-width: 100cqw;
 }
 body main#main section.trainer-preview div article h2 {
   font-size: 3.5rem;
 }
 body main#main section.trainer-preview div article p {
   font-size: 2rem;
-  padding: 1vw;
+  padding: 1cqw 2cqw;
 }
 body main#main section.trainer-preview div article a {
   text-decoration: none;
@@ -196,6 +199,25 @@ body main#main section.trainer-preview div article a:hover {
   color: #b88d48;
   outline: 2px solid #020713;
 }
+@container (min-width: 350px) {
+  body main#main section.trainer-preview div article img {
+    display: block;
+    max-width: 50cqw;
+    height: auto;
+    margin: 10px auto 0 auto;
+    border-radius: 30px;
+    border: 2px solid #b88d48;
+  }
+  body main#main section.trainer-preview div article p {
+    padding: 1cqw 10cqw;
+  }
+  body main#main section.trainer-preview div article a {
+    margin: 20px 10cqw;
+  }
+}
+body main#main section.trainer-preview div article:nth-of-type(2) img {
+  max-width: 100%;
+}
 body footer {
   background-color: #020713;
   display: flex;
@@ -213,6 +235,11 @@ body footer p {
 body footer p.credit {
   font-style: italic;
 }
+@media screen and (max-width: 1000px) {
+  body main#main section.trainer-preview div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media screen and (max-width: 750px) {
   body header {
     align-content: center;
@@ -225,12 +252,7 @@ body footer p.credit {
     margin: 2px auto;
   }
   body main#main section.trainer-preview div {
-    grid-template-columns: auto auto;
-  }
-}
-@media screen and (max-width: 500px) {
-  body main#main section.trainer-preview div {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
   body footer p {
     min-width: 100%;

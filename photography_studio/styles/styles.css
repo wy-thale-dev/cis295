@@ -1,5 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+/* Assignment | Cutting Edge Implementation 
+I found an article on Smashing Magazine's website by Brecht De Ruyte titled "State, Logic, and Native Power: CSS Wrapped 2025." It discussed a few innovations, but the one I implemented was styling the dropdown box of a select menu with only CSS. I implemented a contact section and styled the select menu for pets using examples given in the article. */
 body {
   background-color: #111;
   color: #eeeeee;
@@ -127,7 +129,7 @@ body div#container main section.hero section.about-short p {
 }
 body div#container main article.showcase {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: repeat(5, 1fr);
   row-gap: 10px;
 }
 body div#container main article.showcase figure {
@@ -197,6 +199,126 @@ body div#container main article.showcase figure.rodent {
 }
 body div#container main article.showcase figcaption.rodent {
   grid-column: span 3;
+}
+body section.contact {
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 2%;
+  box-shadow: 2px 2px 8px #111;
+  margin: 2%;
+}
+body section.contact h1 {
+  font-size: 3rem;
+}
+body section.contact p {
+  font-size: 1.7rem;
+}
+body section.contact form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 10px;
+  gap: 10px 0;
+}
+body section.contact form label {
+  grid-column: span 5;
+  font-size: 2rem;
+}
+body section.contact form input {
+  padding: 3px;
+  font-size: 1.7rem;
+  background-color: #000;
+  color: #eeeeee;
+}
+body section.contact form input[type=text] {
+  border: 2px solid #ebc461;
+  grid-column: span 2;
+}
+body section.contact form input[type=email] {
+  border: 2px solid #ebc461;
+  grid-column: span 2;
+}
+body section.contact form select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+@supports ((-webkit-appearance: base-select) or (-moz-appearance: base-select) or (appearance: base-select)) {
+  body section.contact form select, body section.contact form select::picker(select) {
+    -webkit-appearance: base-select;
+       -moz-appearance: base-select;
+            appearance: base-select;
+  }
+}
+body section.contact form select {
+  border: 2px solid #ebc461;
+  grid-column: span 2;
+  padding: 3px;
+  font-size: 1.7rem;
+  background-color: #000;
+  color: #eeeeee;
+  border-radius: 0;
+}
+body section.contact form select::picker-icon {
+  transition: rotate 250ms;
+}
+body section.contact form select:open::picker-icon {
+  rotate: 180deg;
+}
+body section.contact form select::picker(select) {
+  margin: 5px 0;
+  border: 2px solid #ebc461;
+  opacity: 0;
+  height: 0;
+  overflow: clip;
+  transition: height 450ms, opacity 450ms, overlay 250ms;
+}
+body section.contact form select:open::picker(select) {
+  opacity: 1;
+  height: calc-size(auto, size);
+  overflow: auto;
+}
+@starting-style {
+  body section.contact form select:open::picker(select) {
+    opacity: 0;
+    height: 0;
+  }
+}
+body section.contact form select optgroup {
+  background-color: #000;
+  color: #ebc461;
+}
+body section.contact form select optgroup option {
+  color: #eeeeee;
+  background: #000;
+}
+body section.contact form select optgroup option:hover, body section.contact form select optgroup option:focus {
+  background: linear-gradient(90deg, #000 30%, #ebc461 150%);
+  transition: 200ms;
+  cursor: pointer;
+}
+body section.contact form textarea {
+  padding: 3px;
+  font-size: 1.7rem;
+  background-color: #000;
+  color: #eeeeee;
+  grid-column: span 5;
+  border: 2px solid #ebc461;
+}
+body section.contact form input[type=submit] {
+  border: 2px solid #ebc461;
+  grid-column: span 1;
+}
+body section.contact form input[type=submit]:hover {
+  background-color: #111;
+  color: #f5852f;
+  border: 2px solid #f5852f;
+  transition: 250ms;
+}
+body section.contact form input[type=submit]:focus {
+  background-color: #111;
+  color: #f5852f;
+  border: 2px dashed #f5852f;
 }
 body footer {
   background-color: #000;

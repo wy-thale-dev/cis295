@@ -21,6 +21,9 @@ I added a link at the top of the page which is only visible when focused. This w
 I added some links to the trainers as well so that there was something worth skipping to beyond just text. I also added a smooth transition for the link appearing on screen, and tried to match it to the color scheme.
 It is also fixed to teh top of the webpage so that it always appears no matter where on teh page you are. */
 
+/* Assignment | Cutting Edge Implementation
+I read the article "CSS Intelligence: Speculating On The Future Of A Smarter Language" by Gabriel Shoyombo on Smashing Magazine's website. It discussed using container queries, and I implemented them on the trainers section. Originally, the images took up the full width of the articles, but they were often really large. I still liked how they looked at 100%, but only when the articles were thin. So, I set each article to be container-type inline-size and made the images shrink and center when the articles exceeded a width of 350px, using cqw units as well since settign the parent's container-type made them usable. */
+
 body {
     background-color: $light-background;
     color: $dark-background;
@@ -166,22 +169,23 @@ body {
             div {
                 display: grid;
                 gap: 2vw;
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: repeat(3, 1fr);
                 article {
                     border: 4px solid $tree-darker;
                     border-radius: 10px;
                     overflow: hidden;
                     background-color: $tree-darker;
                     color: $bright-background;
+                    container-type: inline-size;
                     img {
-                        max-width: 100%;
+                        max-width: 100cqw;
                     }
                     h2 {
                         font-size: $subheading;
                     }
                     p {
                         font-size: $body;
-                        padding: 1vw;
+                        padding: 1cqw 2cqw;
                     }
                     a {
                         text-decoration: none;
@@ -205,6 +209,27 @@ body {
                             outline: 2px solid $dark-background;
                         }
                     }
+                    @container (min-width: 350px) {
+                        img {
+                            display: block;
+                            max-width: 50cqw;
+                            height: auto;
+                            margin: 10px auto 0 auto;
+                            border-radius: 30px;
+                            border: 2px solid $earth-background;
+                        }
+                        p {
+                            padding: 1cqw 10cqw;
+                        }
+                        a {
+                            margin: 20px 10cqw;
+                        }
+                    }
+                }
+                article:nth-of-type(2) {
+                    img {
+                        max-width: 100%;
+                    }
                 }
             }
         }
@@ -226,6 +251,15 @@ body {
             font-style: italic;
         }
     }
+    @media screen and (max-width: 1000px) {
+        main#main {
+            section.trainer-preview {
+                div {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
     @media screen and (max-width: 750px) {
         header {
             align-content: center;
@@ -240,16 +274,7 @@ body {
         main#main {
             section.trainer-preview {
                 div {
-                    grid-template-columns: auto auto;
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 500px) {
-        main#main {
-            section.trainer-preview {
-                div {
-                    grid-template-columns: auto;
+                    grid-template-columns: 1fr;
                 }
             }
         }
@@ -260,7 +285,6 @@ body {
         }
     }
 }
-
 
 
 

@@ -14,6 +14,9 @@ $body: 2rem;
 $aside: 1.7rem; 
 $footer: 1.3rem;
 
+/* Assignment | Cutting Edge Implementation 
+I found an article on Smashing Magazine's website by Brecht De Ruyte titled "State, Logic, and Native Power: CSS Wrapped 2025." It discussed a few innovations, but the one I implemented was styling the dropdown box of a select menu with only CSS. I implemented a contact section and styled the select menu for pets using examples given in the article. */
+
 body {
     background-color: $background;
     color: $light;
@@ -136,7 +139,7 @@ body {
             }
             article.showcase {
                 display: grid;
-                grid-template-columns: 20% 20% 20% 20% 20%;
+                grid-template-columns: repeat(5, 1fr);
                 row-gap: 10px;
                 figure {
                     border: 2px solid $accent2;
@@ -201,6 +204,121 @@ body {
                 }
                 figcaption.rodent {
                     grid-column: span 3;
+                }
+            }
+        }
+    }
+    section.contact {
+        background-color: $dark;
+        overflow: hidden;
+        border-radius: 30px;
+        padding: 2%;
+        box-shadow: 2px 2px 8px $background;
+        margin: 2%;
+        h1 {
+            font-size: $heading;
+        }
+        p {
+            font-size: $aside;
+        }
+        form {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            padding: 10px;
+            gap: 10px 0;
+            label {
+                grid-column: span 5;
+                font-size: $body;
+            }
+            input {
+                padding: 3px;
+                font-size: $aside;
+                background-color: $dark;
+                color: $light;
+            }
+            input[type="text"] {
+                border: 2px solid $accent1;
+                grid-column: span 2;
+            }
+            input[type="email"] {
+                border: 2px solid $accent1;
+                grid-column: span 2;
+            }
+            select {
+                appearance: none;
+                @supports (appearance: base-select) {
+                    &,
+                    &::picker(select) {
+                        appearance: base-select;
+                    }
+                }
+            }
+            select {
+                border: 2px solid $accent1;
+                grid-column: span 2;
+                padding: 3px;
+                font-size: $aside;
+                background-color: $dark;
+                color: $light;
+                border-radius: 0;
+                &::picker-icon {
+                    transition: rotate 250ms;
+                }
+                &:open::picker-icon {
+                    rotate: 180deg;
+                }
+                &::picker(select) {
+                    margin: 5px 0;
+                    border: 2px solid $accent1;
+                    opacity: 0;
+                    height: 0;
+                    overflow: clip;
+                    transition: height 450ms, opacity 450ms, overlay 250ms;
+                }
+                &:open::picker(select) {
+                    opacity: 1;
+                    height: calc-size(auto, size);
+                    overflow: auto;
+                    @starting-style {
+                        opacity: 0;
+                        height: 0;
+                    }
+                }
+                optgroup {
+                    background-color: $dark;
+                    color: $accent1;
+                    option {
+                        color: $light;
+                        background: $dark;
+                        &:hover, &:focus {
+                            background: linear-gradient(90deg, $dark 30%, $accent1 150%);
+                            transition: 200ms;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            textarea {
+                padding: 3px;
+                font-size: $aside;
+                background-color: $dark;
+                color: $light;
+                grid-column: span 5;
+                border: 2px solid $accent1;
+            }
+            input[type="submit"] {
+                border: 2px solid $accent1;
+                grid-column: span 1;
+                &:hover {
+                    background-color: $background;
+                    color: $accent2;
+                    border: 2px solid $accent2;
+                    transition: 250ms;
+                }
+                &:focus {
+                    background-color: $background;
+                    color: $accent2;
+                    border: 2px dashed $accent2;
                 }
             }
         }

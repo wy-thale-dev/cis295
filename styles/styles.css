@@ -331,12 +331,14 @@ body.pulse main .swipe div.right p {
 }
 body.pulse main .swipe div.center {
   width: 100vw;
-  scroll-snap-align: center;
 }
 body.pulse main .swipe div.center p {
   padding: 8px;
   font-size: 1.6rem;
   text-align: center;
+}
+body.pulse main .swipe div.center {
+  scroll-snap-align: center;
 }
 body.pulse main h2 {
   text-align: center;
