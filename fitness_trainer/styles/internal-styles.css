@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+/* Color Palette */
+/* Typography */
+body {
+  background-color: #95cbf7;
+  font-family: "Ubuntu", sans-serif;
+}
+body header {
+  background-color: #eef0f2;
+  margin: 10px 10px 0 10px;
+  padding: 30px 30px 0 30px;
+  border-radius: 30px 30px 0 0;
+}
+body header h1 {
+  font-size: 5rem;
+  background-color: #b88d48;
+  border-radius: 30px 30px 0 0;
+  padding: 8px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+body > article {
+  background-color: #b88d48;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 10px 0 10px;
+}
+body > article p {
+  font-size: 2rem;
+  background-color: #5f6749;
+  color: #eef0f2;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+body main {
+  background-color: #5f6749;
+  padding: 20px;
+}
+body main section {
+  margin: 0 auto 20px auto;
+  max-width: 1000px;
+  background-color: #8F967E;
+  border-radius: 30px;
+  padding: 10px;
+}
+body main section h2 {
+  font-size: 3.5rem;
+  padding: 8px;
+}
+body main section p {
+  font-size: 2rem;
+  padding: 10px;
+}
+body main section h3 {
+  font-size: 3.5rem;
+  padding: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+body main section div {
+  resize: horizontal;
+  margin: 0 0 0 30px;
+  overflow: auto;
+  max-width: 920px;
+  border: 2px solid #b88d48;
+  container-type: inline-size;
+}
+body main section div article {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+body main section div article p {
+  background-color: #4a5039;
+  text-align: center;
+  padding: 20px 10px;
+  color: #eef0f2;
+}
+@container (max-width:900px) {
+  body main section div article p:nth-child(1) {
+    color: #4a5039;
+  }
+}
+@container (max-width:750px) {
+  body main section div article p:nth-child(2) {
+    color: #4a5039;
+  }
+}
+@container (max-width:600px) {
+  body main section div article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body main section div article p:nth-child(3) {
+    color: #4a5039;
+  }
+}
+@container (max-width:450px) {
+  body main section div article p:nth-child(4) {
+    color: #4a5039;
+  }
+}
+@container (max-width:300px) {
+  body main section div article {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  body main section div article p:nth-child(5) {
+    color: #4a5039;
+  }
+}
+@container (max-width:150px) {
+  body main section div article p:nth-child(6) {
+    color: #4a5039;
+  }
+}
+body main section pre {
+  background-color: #4a5039;
+  padding: 0 30px;
+  border: 1px solid #b88d48;
+  border-radius: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+body main section pre code {
+  font-size: 1.7rem;
+  color: #eef0f2;
+}
+body main section p a {
+  color: #b88d48;
+  background-color: #4a5039;
+  padding: 3px;
+  border-radius: 5px;
+}/*# sourceMappingURL=internal-styles.css.map */

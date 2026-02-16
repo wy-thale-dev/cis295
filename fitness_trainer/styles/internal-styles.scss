@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Color Palette */
+$light-background: #95cbf7;
+$bright-background: #eef0f2;
+$earth-background: #b88d48;
+$tree-background: #5f6749;
+$tree-darker: #4a5039;
+$tree-lighter: #8F967E;
+$dark-background: #020713;
+
+/* Typography */
+$heading: 5rem;
+$subheading: 3.5rem;
+$anchor: 2rem;
+$body: 2rem;
+$aside: 1.7rem;
+
+body {
+    background-color: $light-background;
+    font-family: "Ubuntu", sans-serif;
+    header {
+        background-color: $bright-background;
+        margin: 10px 10px 0 10px;
+        padding: 30px 30px 0 30px;
+        border-radius: 30px 30px 0 0;
+        h1 {
+            font-size: $heading;
+            background-color: $earth-background;
+            border-radius: 30px 30px 0 0;
+            padding: 8px;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+    }
+    > article {
+        background-color: $earth-background;
+        border-radius: 10px 10px 0 0;
+        padding: 10px 10px 0 10px;
+        p {
+            font-size: $body;
+            background-color: $tree-background;
+            color: $bright-background;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+    }
+    main {
+        background-color: $tree-background;
+        padding: 20px;
+        section {
+            margin: 0 auto 20px auto;
+            max-width: 1000px;
+            background-color: $tree-lighter;
+            border-radius: 30px;
+            padding: 10px;
+            h2 {
+                font-size: $subheading;
+                padding: 8px;
+            }
+            p {
+                font-size: $body;
+                padding: 10px;
+            }
+            h3 {
+                font-size: $subheading;
+                padding: 10px;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            div {
+                resize: horizontal;
+                margin: 0 0 0 30px;
+                overflow: auto;
+                max-width: 920px;
+                border: 2px solid $earth-background;
+                container-type: inline-size;
+                article {
+                    container-type: inline-size;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 10px;
+                    p {
+                        background-color: $tree-darker;
+                        text-align: center;
+                        padding: 20px 10px;
+                        color: $bright-background;
+                    }
+                }
+                @container (max-width:900px) {
+                    article {
+                        p:nth-child(1) {
+                            color: $tree-darker;
+                        }
+                    }
+                }
+                @container (max-width:750px) {
+                    article {
+                        p:nth-child(2) {
+                            color: $tree-darker;
+                        }
+                    }
+                }
+                @container (max-width:600px) {
+                    article {
+                        grid-template-columns: repeat(2, 1fr);
+                        p:nth-child(3) {
+                            color: $tree-darker;
+                        }
+                    }
+                }
+                @container (max-width:450px) {
+                    article {
+                        p:nth-child(4) {
+                            color: $tree-darker;
+                        }
+                    }
+                }
+                @container (max-width:300px) {
+                    article {
+                        grid-template-columns: repeat(1, 1fr);
+                        p:nth-child(5) {
+                            color: $tree-darker;
+                        }
+                    }
+                }
+                @container (max-width:150px) {
+                    article {
+                        p:nth-child(6) {
+                            color: $tree-darker;
+                        }
+                    }
+                }
+            }
+            pre {
+                background-color: $tree-darker;
+                padding: 0 30px;
+                border: 1px solid $earth-background;
+                border-radius: 20px;
+                margin: 0 auto;
+                max-width: 600px;
+                code {
+                    font-size: $aside;
+                    color: $bright-background;
+                }
+            }
+            p {
+                a {
+                    color: $earth-background;
+                    background-color: $tree-darker;
+                    padding: 3px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

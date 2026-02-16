@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Wyatt Thale">
+        <meta name="description" content="This is an internal company page for Mount Cyllene explaining our implementation of container queries. For employee use only.">
+        <link rel="stylesheet" href="styles/reset-rule.css">
+        <link rel="stylesheet" href="styles/internal-styles.css">
+        <title>Mount Cyllene - Container Queries</title>
+    </head>
+    <body>
+        <header>
+            <h1>Container Queries</h1>
+        </header>
+        <article>
+            <p>Our website has moved to implement Container Queries as part of modernizing our design. Currently, articles on the main page are querying their parent to resize their images depending on the width of the parent container. This allows changes to happen on dynamic elements like grids without relying on basing their size on the user's viewport width.</p>
+        </article>
+        <main>
+            <section class="width-demo">
+                <h2>Querying Container Width</h2>
+                <p>By querying the width of a parent container, we can easily set breakpoints for individual UI elements that are independent of the width of the tab. This way, we can make dynamic elements that scale well across all screen widths. We can also improve the flexibility of dynamic content.<br>This horizontally-resizable demo shows how the format of a grid can change while the webpage remains static. Displayed container widths will disappear as you shrink past them.</p>
+                <div>
+                    <article>
+                        <p>900px</p>
+                        <p>750px</p>
+                        <p>600px</p>
+                        <p>450px</p>
+                        <p>300px</p>
+                        <p>150px</p>
+                    </article>
+                </div>
+                <h3>HTML</h3>
+                <pre>
+                    <code>
+&lt;article>
+    &lt;p>900px&lt;/p>
+    &lt;p>750px&lt;/p>
+    &lt;p>600px&lt;/p>
+    &lt;p>450px&lt;/p>
+    &lt;p>300px&lt;/p>
+    &lt;p>150px&lt;/p>
+&lt;/article></code>
+                </pre>
+                <h3>CSS</h3>
+                <pre>
+<code>
+@container (max-width:900px) {
+    article {
+        p:nth-child(1) {
+            color: $tree-darker;
+        }
+    }
+}
+@container (max-width:750px) {
+    article {
+        p:nth-child(2) {
+            color: $tree-darker;
+        }
+    }
+}
+@container (max-width:600px) {
+    article {
+        grid-template-columns: repeat(2, 1fr);
+        p:nth-child(3) {
+            color: $tree-darker;
+        }
+    }
+}
+@container (max-width:450px) {
+    article {
+        p:nth-child(4) {
+            color: $tree-darker;
+        }
+    }
+}
+@container (max-width:300px) {
+    article {
+        grid-template-columns: repeat(1, 1fr);
+        p:nth-child(5) {
+            color: $tree-darker;
+        }
+    }
+}
+@container (max-width:150px) {
+    article {
+        p:nth-child(6) {
+            color: $tree-darker;
+        }
+    }
+}
+
+                    </code>
+                </pre>
+                <p>This feature should work with modern versions of most browsers. That being said, remember that not every situation requires these queries. Simple max-widths and percentage based units can keep layouts such as this website's scalable without creating confusing or cluttered code.</p>
+                <p>To read more about these tools, look through this <a href="https://www.smashingmagazine.com/2025/07/css-intelligence-speculating-future-smarter-language/">article</a> by Gabriel Shoyombo on Smashing Magazine's website. It provides a brief overview of container queries and links to several resources that go further in depth on the topic.</p>
+            </section>
+        </main>
+    </body>
+</html>
