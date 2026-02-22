@@ -4,19 +4,96 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-        <title>Picture Purrfect - Professional Pet Photography in Bend, Oregon</title>
+        <!-- Primary Meta Tags -->
+        <title>Professional Pet Photography | Picture Purrfect | Bend, Oregon</title>
         <meta name="author" content="Wyatt Thale" />
         <meta name="description" content="Professional photography studio in Bend, Oregon, bringing you high-quality pet pictures in a stress-free environment. Get a shoot scheduled today!" />
-    <!-- Open Graph -->
+        <!-- Open Graph -->
         <meta property="og:title" content="Picture Purrfect - Professional Pet Photography in Bend, Oregon" />
         <meta property="og:description" content="Professional photography studio in Bend, Oregon, bringing you high-quality pet pictures in a stress-free environment. Get a shoot scheduled today!" />
         <meta property="og:image" content="https://wthale.ninetyfive.dev/cis295/photography_studio/images/logo_og.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://wthale.ninetyfive.dev/cis295/photography_studio/index.html" />
-    <!-- Stylesheets -->
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!-- Stylesheets -->
         <link rel="stylesheet" href="styles/reset-rule.css">
         <link rel="stylesheet" href="styles/styles.css">
+        <!-- Location Info Schema -->
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Picture Purrfect",
+        "url": "https://wthale.ninetyfive.dev/cis295/photography_studio/index.html",
+        "telephone": "541-555-0196",
+        "priceRange": "$400-$600",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1640 Riverside Drive",
+            "addressLocality": "Bend",
+            "addressRegion": "OR",
+            "postalCode": "97702",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 44.04657559214312,
+            "longitude": -121.31584528889792
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+            ],
+            "opens": "10:00",
+            "closes": "20:00"
+        } 
+        }
+        </script>
+        <!-- 20% Project: I added FAQ Schema to answer questions about which pets are allowed and how they are cared for in order to alleviate concerns that potential customers may have. These questions are answered in the about section of the home page, though not in this format, so this makes them more concise and eligible for Google's rich results. -->
+         <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What size animals are allowed?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are able to handle most pets that are dog sized or smaller, like cats, rodents, reptiles, amphibians, birds, bugs, and fish, in our indoor studio. For larger animals like horses, our outdoor studio is available."
+            }
+        },{
+            "@type": "Question",
+            "name": "Are any animals not allowed?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We do not allow aggressive animals, and venomous/poisonous animals must be kept within an enclosure while on our property."
+            }
+        },{
+            "@type": "Question",
+            "name": "How do you ensure the safety and comfort of my pet?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use soft lighting and soundproofing within our indoor studio to ensure the environment is not overstimulating. Our sets are enclosed so that smaller pets can't run off. Treats are used to get the attention of pets for photos to keep them calm and in their natural state."
+            }
+        },{
+            "@type": "Question",
+            "name": "What if I can't bring my pet to the studio?",
+            "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We can work with clients to have photographers visit them and photograph pets in their home."
+            }
+        }]
+        }
+        </script>
     </head>
     <body>
         <div id="container">
@@ -33,9 +110,9 @@
                     </nav>
                 </div>
             </header>
-            <main class="card">
-                <span class="glow"></span>
-                <div class="inner">
+            <main>
+                <span></span>
+                <div>
                     <section class="hero">
                         <figure>
                             <h1>High Quality</h1>
@@ -71,41 +148,44 @@
                 </article>
             </main>
         </div>
-        <section class="contact" id="contact">
-            <h1>Contact Us</h1>
-            <p>Let us know what kind of pet you want photographed and our best expert will reach out to schedule a photoshoot.</p>
-            <form>
-                <label for="name">Name</label>
-                <input type="text" id="name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email"required>
-                <label for="pet-type">Pet Type</label>
-                <select id="pet-type">
-                    <button>
-                        <selectedcontent></selectedcontent>
-                    </button>
-                    <optgroup label="Big Pets">
-                        <option>Cat</option>
-                        <option>Dog</option>
-                        <option>Other Large Pet</option>
-                    </optgroup>
-                    <optgroup label="Little Pets">
-                        <option>Amphibian</option>
-                        <option>Reptile</option>
-                        <option>Rodents</option>
-                    </optgroup>
-                    <optgroup label="Other Pets">
-                        <option>Fish</option>
-                        <option>Bug</option>
-                    </optgroup>
-                </select>
-                <label for="additional-info">Additional Info</label>
-                <textarea id="additional-info"></textarea>
-                <input type="submit" value="Send Email">
-            </form>
+        <section class="contact card" id="contact">
+            <span class="glow"></span>
+            <div class="inner">
+                <h1>Contact Us</h1>
+                <p>Let us know what kind of pet you want photographed and our best expert will reach out to schedule a photoshoot.</p>
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email"required>
+                    <label for="pet-type">Pet Type</label>
+                    <select id="pet-type">
+                        <button>
+                            <selectedcontent></selectedcontent>
+                        </button>
+                        <optgroup label="Big Pets">
+                            <option>Cat</option>
+                            <option>Dog</option>
+                            <option>Other Large Pet</option>
+                        </optgroup>
+                        <optgroup label="Little Pets">
+                            <option>Amphibian</option>
+                            <option>Reptile</option>
+                            <option>Rodents</option>
+                        </optgroup>
+                        <optgroup label="Other Pets">
+                            <option>Fish</option>
+                            <option>Bug</option>
+                        </optgroup>
+                    </select>
+                    <label for="additional-info">Additional Info</label>
+                    <textarea id="additional-info"></textarea>
+                    <input type="submit" value="Send Email">
+                </form>
+            </div>
         </section>
         <footer>
-            <p>&copy; 2026 Wyatt Thale <br> Last Updated - 2/19/2026</p>
+            <p>&copy; 2026 Wyatt Thale <br> Last Updated - 2/22/2026</p>
             <p class="credit">Text Content and Logo Generated by Gemini 3 <br> Ginger Cat Photo by amir maleky on Unsplash <br> Dog Photo by Baptist Standaert on Unsplash <br> Calico Cat Photo by Uriel Soberanes on Unsplash <br> Rodent Photo by Nikolett Emmert on Unsplash <br> Fish Photo by Delbert Pagayona on Unsplash</p>
         </footer>
     </body>

@@ -4,7 +4,7 @@
 /* 20% Project 3: Skip to Main Content Link
 I added a link at the top of the page which is only visible when focused. This way, the button is only visbile to those who are navigating via keyboard and won't change the intended design of the website.
 I added some links to the trainers as well so that there was something worth skipping to beyond just text. I also added a smooth transition for the link appearing on screen, and tried to match it to the color scheme.
-It is also fixed to teh top of the webpage so that it always appears no matter where on teh page you are. */
+It is also fixed to the top of the webpage so that it always appears no matter where on teh page you are. */
 /* Assignment | Cutting Edge Implementation
 I read the article "CSS Intelligence: Speculating On The Future Of A Smarter Language" by Gabriel Shoyombo on Smashing Magazine's website. It discussed using container queries, and I implemented them on the trainers section. Originally, the images took up the full width of the articles, but they were often really large. I still liked how they looked at 100%, but only when the articles were thin. So, I set each article to be container-type inline-size and made the images shrink and center when the articles exceeded a width of 350px, using cqw units as well since setting the parent's container-type made them usable. */
 body {
@@ -42,7 +42,7 @@ body header {
 body header figure {
   background-image: url(../images/MC_Logo_Header.png);
   width: 33vw;
-  aspect-ratio: 1408/768;
+  aspect-ratio: 677/339;
   background-size: cover;
 }
 body header figcaption {
