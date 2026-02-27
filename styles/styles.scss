@@ -378,3 +378,42 @@ body.pulse {
         scroll-snap-align: start;
     }
 }
+
+/* Participation | Hello, Javascript */
+body.js_intro {
+    background-color: $medium;
+    header {
+        text-align: center;
+        padding: 20px;
+        h1 {
+            font-size: $heading;
+        }
+        h2 {
+            font-size: $subheading;
+        }
+    }
+    main {
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 800px;
+        article {
+            background-color: $semi-dark;
+            box-shadow: 2px 2px 4px $dark;
+            border-radius: 10px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            button {
+                color: $bright;
+                background-color: $dark;
+                padding: 8px;
+                margin: 8px auto;
+                border-radius: 8px;
+            }
+            p {
+                font-size: $paragraph;
+                padding: 8px;    
+            }
+        }
+    }
+}

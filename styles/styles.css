@@ -364,4 +364,42 @@ body.pulse main .cqw div.center {
   to {
     scroll-snap-align: start;
   }
+}
+/* Participation | Hello, Javascript */
+body.js_intro {
+  background-color: #ddd;
+}
+body.js_intro header {
+  text-align: center;
+  padding: 20px;
+}
+body.js_intro header h1 {
+  font-size: 3rem;
+}
+body.js_intro header h2 {
+  font-size: 2.5rem;
+}
+body.js_intro main {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 800px;
+}
+body.js_intro main article {
+  background-color: #aaa;
+  box-shadow: 2px 2px 4px #444;
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+body.js_intro main article button {
+  color: #eee;
+  background-color: #444;
+  padding: 8px;
+  margin: 8px auto;
+  border-radius: 8px;
+}
+body.js_intro main article p {
+  font-size: 1.6rem;
+  padding: 8px;
 }/*# sourceMappingURL=styles.css.map */
