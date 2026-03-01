@@ -164,6 +164,21 @@ body {
                 line-height: 2.7rem;
                 padding: 0 8% 20px 8%;
             }
+            button {
+                font-size: $body;
+                padding: 8px;
+                background-color: $tree-darker;
+                color: $bright-background;
+                display: block;
+                margin: 0 auto;
+                border: 1px solid $dark-background;
+                border-radius: 10px;
+                &:hover {
+                    box-shadow: 0 0 8px $dark-background;
+                    color: $earth-background;
+                    transition: 250ms;
+                }
+            }
         }
         section.trainer-preview {
             div {

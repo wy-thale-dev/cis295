@@ -48,7 +48,7 @@ body div#container header div nav a {
   color: #ebc461;
   text-decoration: none;
   min-width: 50%;
-  padding: 5%;
+  padding: 8px;
   font-size: 2rem;
   text-align: center;
   flex-grow: 1;
@@ -69,8 +69,32 @@ body div#container main {
   background-color: #000;
   overflow: hidden;
   border-radius: 30px;
-  padding: 2%;
+  padding: 5px 2%;
   box-shadow: 2px 2px 8px #111;
+}
+body div#container main button {
+  color: #ebc461;
+  background-color: #000;
+  text-decoration: none;
+  display: block;
+  margin: 8px auto;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 2rem;
+  text-align: center;
+  flex-grow: 1;
+  border: 1px solid #ebc461;
+}
+body div#container main button:focus {
+  color: #f5852f;
+  background: #222;
+  outline: 2px dashed #f5852f;
+}
+body div#container main button:hover {
+  transition: 350ms;
+  color: #f5852f;
+  background: #222;
+  border: 1px solid #f5852f;
 }
 body div#container main section.hero {
   padding-bottom: 10px;

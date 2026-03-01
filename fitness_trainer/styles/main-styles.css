@@ -154,6 +154,21 @@ body main#main section p {
   line-height: 2.7rem;
   padding: 0 8% 20px 8%;
 }
+body main#main section button {
+  font-size: 2rem;
+  padding: 8px;
+  background-color: #4a5039;
+  color: #eef0f2;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #020713;
+  border-radius: 10px;
+}
+body main#main section button:hover {
+  box-shadow: 0 0 8px #020713;
+  color: #b88d48;
+  transition: 250ms;
+}
 body main#main section.trainer-preview div {
   display: grid;
   gap: 2vw;
