@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Wyatt Thale">
+        <meta name="description" content="This page contains some simple JavaScript that opens a navigation menu with a button.">
+        <link rel="stylesheet" href="../styles/reset-rule.css">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <script src="mobile_menu.js" defer></script>
+        <title>Mobile Menu - Wyatt Thale</title>
+    </head>
+    <body class="mobile_menu">
+        <header>
+            <h1>Participation | The Mobile Menu</h1>
+        </header>
+        <main>
+            <div>
+                <nav id="navMenu" class="nav-menu">
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Products</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button id="menuButton">&#x2630</button>
+            </div>
+            <article>
+                <p>Click the hamburger button to open a navigation menu. The menu has a negative margin and a lower z-index than the header by default. The button returns its margin to normal, and an ease out transition makes it appear to slide down.</p>
+            </article>
+        </main>
+    </body>
+</html>

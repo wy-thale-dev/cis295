@@ -417,3 +417,88 @@ body.js_intro {
         }
     }
 }
+
+/* Participation | The Mobile Menu */
+body.mobile_menu {
+    background-color: $medium;
+    header {
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+        background-color: $dark;
+        text-align: center;
+        padding: 20px;
+        h1 {
+            font-size: $heading;
+            color: $bright;
+        }
+    }
+    main {
+        margin: 0 auto;
+        padding: 74px 20px 0 20px;
+        max-width: 1000px;
+        div {
+            position: relative;
+            height: 10px;
+            margin: 0 10px;
+            container-type: size;
+            nav.nav-menu {
+                transition: all 0.5s ease;
+                position: absolute;
+                background-color: $dark;
+                padding: 8px 10px;
+                max-width: 100px;
+                top: 0;
+                height: 120px;
+                margin: -122px 0 0 0;
+                border-radius: 0 0 8px 0;
+                ul {
+                    list-style-type: none;
+                    li {
+                        a {
+                            text-decoration: none;
+                            color: $bright;
+                            font-size: $anchor;
+                            &:hover {
+                                text-decoration: underline;
+                                color: $highlight;
+                            }
+                        }
+                    }
+                }
+            }
+            nav.open {
+                margin: -2px 0 0 0;
+            }
+            button {
+                transition: all 0.5s ease;
+                position: absolute;
+                border: 0px;
+                background-color: $dark;
+                color: $bright;
+                padding: 4px;
+                font-size: $paragraph;
+                margin: -2px 0 0 0;
+                top: -2px;
+                border-radius: 0 0 8px 8px;
+                &:hover {
+                    color: $highlight;
+                }
+            }
+            button.open {
+                top: 118px;
+            }
+        }
+        article {
+            background-color: $semi-dark;
+            box-shadow: 2px 2px 4px $dark;
+            border-radius: 10px;
+            padding: 8px;
+            margin: 20px 0 0 0;
+            p {
+                font-size: $paragraph;
+                padding: 8px;
+            }
+        }
+    }
+}
