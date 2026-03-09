@@ -20,3 +20,26 @@ readMoreBtn.addEventListener("click", () => {
 // 20% Project | I added an automatic copyright year to both of my websites so that it will always be up to date. It only took one line of JavaScript, and an id tag on a span element where the year should go.
 // Get Current Year and place it in the footer copyright
 document.getElementById("year").innerHTML = new Date().getFullYear();
+
+
+// Modal Contact Menu
+// Variables
+const contactMenuBtn = document.querySelector("#modalContactButton");
+const contactMenuBtnX = document.querySelector("#modalContactButtonX");
+const contactMenu = document.querySelector("#modalContactMenu");
+
+// 20% Project | I made it so the background doesn't scroll while the modal menu is open. I had a class called no-scroll by toggled for the body when the contact buttons are pressed.
+// Variables
+const indexBody = document.querySelector("#indexBody");
+
+// When hero button or X button clicked, toggle the .open style for the contact menu
+contactMenuBtn.addEventListener("click", () => {
+    contactMenu.classList.toggle("open");
+    indexBody.classList.toggle("no-scroll");
+})
+contactMenuBtnX.addEventListener("click", () => {
+    contactMenu.classList.toggle("open");
+    indexBody.classList.toggle("no-scroll");
+})
+
+

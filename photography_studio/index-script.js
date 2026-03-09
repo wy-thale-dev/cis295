@@ -22,3 +22,14 @@ lightBtn.addEventListener("click", () => {
 // 20% Project | I added an automatic copyright year to both of my websites so that it will always be up to date. It only took one line of JavaScript, and an id tag on a span element where the year should go.
 // Get Current Year and place it in the footer copyright
 document.getElementById("year").innerHTML = new Date().getFullYear();
+
+// Mobile Navigation Menu
+// Variables
+const mobileNavMenuBtn = document.querySelector("#mobileNavMenuButton");
+const mobileNavMenu = document.querySelector("#mobileNavMenu");
+
+// When hamburger button clicked, toggle the .open style on the mobile nav menu and button
+mobileNavMenuBtn.addEventListener("click", () => {
+    mobileNavMenu.classList.toggle("open");
+    mobileNavMenuBtn.classList.toggle("open");
+})

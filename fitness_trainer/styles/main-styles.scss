@@ -24,6 +24,9 @@ It is also fixed to the top of the webpage so that it always appears no matter w
 /* Assignment | Cutting Edge Implementation
 I read the article "CSS Intelligence: Speculating On The Future Of A Smarter Language" by Gabriel Shoyombo on Smashing Magazine's website. It discussed using container queries, and I implemented them on the trainers section. Originally, the images took up the full width of the articles, but they were often really large. I still liked how they looked at 100%, but only when the articles were thin. So, I set each article to be container-type inline-size and made the images shrink and center when the articles exceeded a width of 350px, using cqw units as well since setting the parent's container-type made them usable. */
 
+body.no-scroll {
+    overflow: hidden;
+}
 body {
     background-color: $light-background;
     color: $dark-background;
@@ -121,7 +124,7 @@ body {
                 font-size: $heading;
                 color: $dark-background;
             }
-            a {
+            button {
                 position: absolute;
                 top: 42%; left: 15%;
                 text-align: center;
@@ -141,6 +144,76 @@ body {
                     transition: 250ms;
                     background-color: $tree-darker;
                     color: $earth-background;
+                }
+            }
+        }
+    }
+    section.modal {
+        display: none;
+    }
+    section.open {
+        display: flex;
+        padding: 20px;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        article {
+            background-color: $tree-darker;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid $dark-background;
+            flex-grow: 1;
+            position: relative;
+            padding: 10px 20px;
+            button {
+                position: absolute;
+                top: 0; right: 0;
+                font-size: $subheading;
+                padding: 4px 12px;
+                background-color: $tree-lighter;
+                border: 0;
+                border-left: 2px solid $dark-background; border-bottom: 2px solid $dark-background;
+                border-radius: 0 0 0 10px;
+            }
+            h2 {
+                font-size: $subheading;
+                text-align: center;
+                color: $bright-background;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+                font-size: $body;
+                gap: 8px;
+                label {
+                    color: $bright-background;
+                }
+                input, textarea {
+                    padding: 4px;
+                    border-radius: 8px;
+                    font-size: $body;
+                }
+                input#contactFormName {
+                    max-width: 200px;
+                }
+                input#contactFormEmail {
+                    max-width: 300px;
+                }
+                textarea {
+                    max-width: 100%;
+                    resize: none;
+                    height: 100px;
+                }
+                input#contactFormSubmit {
+                    max-width: 200px;
+                    margin: 0 auto;
+                    background-color: $tree-background;
+                    color: white;
+                    border: 2px solid $dark-background;
+                    &:hover {
+                        color: $earth-background;
+                        transition: 200ms;
+                    }
                 }
             }
         }

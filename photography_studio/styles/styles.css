@@ -12,6 +12,63 @@ body div#container {
   margin: 2%;
   gap: 2%;
 }
+body div#container button.mobileNavMenu {
+  display: none;
+  transition: all 350ms ease;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  font-size: 6vw;
+  width: 10vw;
+  aspect-ratio: 1;
+  background-color: #111;
+  color: #ebc461;
+  border: 0;
+  border-radius: 0 0 0 8px;
+}
+body div#container button.mobileNavMenu:hover {
+  color: #f5852f;
+  transition: 250ms;
+}
+body div#container button.open {
+  color: #f5852f;
+}
+body div#container nav.mobileNavMenu {
+  display: none;
+  transition: all 350ms ease;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: -100%;
+  flex-direction: column;
+  padding: 10vw 0 0 0;
+}
+body div#container nav.mobileNavMenu a {
+  background-color: #000;
+  width: 100%;
+  font-size: 2rem;
+  color: #ebc461;
+  text-decoration: none;
+  padding: 8px;
+  text-align: center;
+  flex-grow: 1;
+  border: 1px solid #ebc461;
+}
+body div#container nav.mobileNavMenu a:focus {
+  color: #f5852f;
+  background: #222;
+  outline: 2px dashed #f5852f;
+}
+body div#container nav.mobileNavMenu a:hover {
+  transition: 350ms;
+  color: #f5852f;
+  background: #222;
+  border: 1px solid #f5852f;
+}
+body div#container nav.open {
+  right: 0;
+}
 body div#container header {
   border-radius: 30px 30px 0 0;
   min-width: 200px;
@@ -377,6 +434,21 @@ body footer p.credit {
   }
 }
 @media screen and (max-width: 700px) {
+  body div#container button.mobileNavMenu {
+    display: block;
+  }
+  body div#container nav.mobileNavMenu {
+    display: flex;
+  }
+  body div#container header {
+    border-radius: 30px;
+  }
+  body div#container header div {
+    border-radius: 30px;
+  }
+  body div#container header div nav {
+    display: none;
+  }
   body div#container main article.showcase figure.dog {
     grid-column: span 5;
     order: 1;
