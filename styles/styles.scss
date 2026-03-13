@@ -13,8 +13,10 @@ $subheading: 2.5rem;
 
 body.home {
     background-color: $medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     header {
-        background-color: $medium;
+        background-color: $dark;
+        color: $bright;
         padding: 5px;
         h1 {
             text-align: center;
@@ -27,72 +29,162 @@ body.home {
             padding: 5px;
         }
     }
-    nav.navbar {
-        background-color: $semi-dark;
-        margin: 0 20px 15px 20px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 4px $dark;
-        padding: 10px;
-        display: flex;
-        gap: 10px;
-        justify-content: space-evenly;
-        a {
-            font-size: $anchor;
-            text-decoration: none;
-            text-align: center;
+    div {
+        background: radial-gradient(circle, rgba(255, 127, 80, 1) 0%, rgba(156, 123, 123, 1) 61%, rgba(97, 97, 97, 1) 100%);
+        padding: 20px 0 20px 0;
+        article {
+            max-width: 1100px;
+            margin: 0 auto 15px auto;
+            background-color: rgba($semi-dark, 60%);
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px $semi-dark;
+            padding: 8px;
             color: $bright;
-            background-color: $dark;
-            padding: 10px 7px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 8px $dark;
-            &:hover {
-                transition: 200ms;
-                color: $highlight;
-                box-shadow: 3px 3px 8px $dark;
+            h2 {
+                font-size: $subheading;
+                padding: 8px 8px 4px 8px;
+                background-color: $dark;
+                border-radius: 10px 10px 0 0;
+            }
+            p {
+                font-size: $paragraph;
+                padding: 4px 8px 8px 8px;
+                background-color: $dark;
+                border-radius: 0 0 10px 10px;
             }
         }
-    }
-    main {
-        background-color: $medium;
-        h1 {
-            text-align: center;
-            padding: 10px;
-            font-size: $subheading;
-        }
-        section {
-            background-color: $semi-dark;
-            display: flex;
-            flex-flow: row wrap;
-            padding: 10px;
-            gap: 10px;
-            margin: 0 20px 15px 20px;
+        nav.navbar {
+            background-color: rgba($semi-dark, 60%);
+            margin: 50px auto;
+            max-width: 1100px;
             border-radius: 10px;
-            justify-content: space-between;
-            box-shadow: 2px 2px 4px $dark;
-            a {
-                flex-grow: 1;
-                width: 49%;
+            box-shadow: 0px 0px 8px $semi-dark;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            justify-content: space-evenly;
+            h1 {
                 text-align: center;
+                padding: 10px;
+                font-size: $subheading;
+                grid-column: span 2;
+            }
+            a {
+                border: 3px solid $dark;
+                container-type: inline-size;
+                border-radius: 10px;
+                color: white;
                 text-decoration: none;
-                font-size: $anchor;
-                color: $bright;
-                background-color: $dark;
-                padding: 10px 7px;
-                border-radius: 5px;
-                box-shadow: 2px 2px 8px $dark;
+                h2 {
+                    background-color: $dark;
+                    font-size: $subheading;
+                    padding: 8px 8px 4px 8px;
+                }
+                p {
+                    background-color: $dark;
+                    font-size: $paragraph;
+                    padding: 4px 8px 8px 8px;
+                }
+                img {
+                    max-width: 100cqw;
+                    margin: 0px auto;
+                }
                 &:hover {
-                    transition: 200ms;
                     color: $highlight;
-                    box-shadow: 3px 3px 8px $dark;
+                    transition: 250ms;
+                    box-shadow: 0px 0px 8px $dark;
+                }
+            }
+            a:nth-child(2) {
+                background-color: #8f967e;
+                img {
+                    aspect-ratio: 677/339;
+                    padding: 8px;
+                }
+            }
+            a:nth-child(3) {
+                background-color: #363636;
+                img {
+                    display: block;
                 }
             }
         }
+        main {
+            margin: 0px auto;
+            max-width: 1100px;
+            section {
+                background-color: rgba($semi-dark, 60%);
+                display: flex;
+                flex-flow: row wrap;
+                padding: 10px;
+                gap: 10px;
+                border-radius: 10px;
+                justify-content: space-between;
+                box-shadow: 0px -2px 4px $semi-dark;
+                h1 {
+                    text-align: center;
+                    padding: 10px;
+                    font-size: $subheading;
+                    min-width: 100%;
+                }
+                a {
+                    flex-grow: 1;
+                    width: 49%;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: $anchor;
+                    color: $bright;
+                    background-color: $dark;
+                    padding: 10px 7px;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 4px $dark;
+                    h2 {
+                        font-size: $subheading;
+                    }
+                    p {
+                        padding: 10px;
+                        font-size: $paragraph;
+                    }
+                    &:hover {
+                        transition: 200ms;
+                        color: $highlight;
+                        box-shadow: 0px 0px 8px $dark;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: $dark;
+        padding: 8px 0;
+        p {
+            max-width: 500px;
+            text-align: center;
+            margin: 0px auto;
+            padding: 8px;
+            font-size: $paragraph;
+            color: $bright;
+        }
+    }
+    
+    @media screen and (max-width: 700px) {
+        div {
+            padding: 20px;
+            nav.navbar {
+                grid-template-columns: 1fr;
+                h1 {
+                    grid-column: span 1;
+                }
+            }
+        } 
     }
 }
 
 /* Participation | Layout Logic */
 body.layout {
     background-color: $medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     header {
         background-color: $semi-dark;
         box-shadow: 2px 2px 4px $dark;
@@ -195,6 +287,7 @@ body.layout {
 /* Participation | Style Guide */
 body.style-guide {
     background-color: $medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     header {
         background-color: $medium;
         padding: 5px;
@@ -290,6 +383,7 @@ body.style-guide {
 /* Participation | Industry Pulse */
 body.pulse {
     background-color: $medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     header {
         background-color: $medium;
         padding: 5px;
@@ -382,6 +476,7 @@ body.pulse {
 /* Participation | Hello, Javascript */
 body.js_intro {
     background-color: $medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     header {
         text-align: center;
         padding: 20px;
@@ -421,6 +516,7 @@ body.js_intro {
 /* Participation | The Mobile Menu */
 body.mobile_menu {
     background-color: $medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     header {
         position: fixed;
         width: 100%;

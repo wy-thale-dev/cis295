@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 body.home {
   background-color: #ddd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body.home header {
-  background-color: #ddd;
+  background-color: #444;
+  color: #eee;
   padding: 5px;
 }
 body.home header h1 {
@@ -16,51 +18,109 @@ body.home header h2 {
   font-size: 2.5rem;
   padding: 5px;
 }
-body.home nav.navbar {
-  background-color: #aaa;
-  margin: 0 20px 15px 20px;
+body.home div {
+  background: radial-gradient(circle, rgb(255, 127, 80) 0%, rgb(156, 123, 123) 61%, rgb(97, 97, 97) 100%);
+  padding: 20px 0 20px 0;
+}
+body.home div article {
+  max-width: 1100px;
+  margin: 0 auto 15px auto;
+  background-color: rgba(170, 170, 170, 0.6);
   border-radius: 10px;
-  box-shadow: 2px 2px 4px #444;
+  box-shadow: 0px 2px 4px #aaa;
+  padding: 8px;
+  color: #eee;
+}
+body.home div article h2 {
+  font-size: 2.5rem;
+  padding: 8px 8px 4px 8px;
+  background-color: #444;
+  border-radius: 10px 10px 0 0;
+}
+body.home div article p {
+  font-size: 1.6rem;
+  padding: 4px 8px 8px 8px;
+  background-color: #444;
+  border-radius: 0 0 10px 10px;
+}
+body.home div nav.navbar {
+  background-color: rgba(170, 170, 170, 0.6);
+  margin: 50px auto;
+  max-width: 1100px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px #aaa;
   padding: 10px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   justify-content: space-evenly;
 }
-body.home nav.navbar a {
-  font-size: 1.8rem;
-  text-decoration: none;
-  text-align: center;
-  color: #eee;
-  background-color: #444;
-  padding: 10px 7px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 8px #444;
-}
-body.home nav.navbar a:hover {
-  transition: 200ms;
-  color: #ff7f50;
-  box-shadow: 3px 3px 8px #444;
-}
-body.home main {
-  background-color: #ddd;
-}
-body.home main h1 {
+body.home div nav.navbar h1 {
   text-align: center;
   padding: 10px;
   font-size: 2.5rem;
+  grid-column: span 2;
 }
-body.home main section {
-  background-color: #aaa;
+body.home div nav.navbar a {
+  border: 3px solid #444;
+  container-type: inline-size;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+body.home div nav.navbar a h2 {
+  background-color: #444;
+  font-size: 2.5rem;
+  padding: 8px 8px 4px 8px;
+}
+body.home div nav.navbar a p {
+  background-color: #444;
+  font-size: 1.6rem;
+  padding: 4px 8px 8px 8px;
+}
+body.home div nav.navbar a img {
+  max-width: 100cqw;
+  margin: 0px auto;
+}
+body.home div nav.navbar a:hover {
+  color: #ff7f50;
+  transition: 250ms;
+  box-shadow: 0px 0px 8px #444;
+}
+body.home div nav.navbar a:nth-child(2) {
+  background-color: #8f967e;
+}
+body.home div nav.navbar a:nth-child(2) img {
+  aspect-ratio: 677/339;
+  padding: 8px;
+}
+body.home div nav.navbar a:nth-child(3) {
+  background-color: #363636;
+}
+body.home div nav.navbar a:nth-child(3) img {
+  display: block;
+}
+body.home div main {
+  margin: 0px auto;
+  max-width: 1100px;
+}
+body.home div main section {
+  background-color: rgba(170, 170, 170, 0.6);
   display: flex;
   flex-flow: row wrap;
   padding: 10px;
   gap: 10px;
-  margin: 0 20px 15px 20px;
   border-radius: 10px;
   justify-content: space-between;
-  box-shadow: 2px 2px 4px #444;
+  box-shadow: 0px -2px 4px #aaa;
 }
-body.home main section a {
+body.home div main section h1 {
+  text-align: center;
+  padding: 10px;
+  font-size: 2.5rem;
+  min-width: 100%;
+}
+body.home div main section a {
   flex-grow: 1;
   width: 49%;
   text-align: center;
@@ -70,17 +130,48 @@ body.home main section a {
   background-color: #444;
   padding: 10px 7px;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px #444;
+  box-shadow: 0px 0px 4px #444;
 }
-body.home main section a:hover {
+body.home div main section a h2 {
+  font-size: 2.5rem;
+}
+body.home div main section a p {
+  padding: 10px;
+  font-size: 1.6rem;
+}
+body.home div main section a:hover {
   transition: 200ms;
   color: #ff7f50;
-  box-shadow: 3px 3px 8px #444;
+  box-shadow: 0px 0px 8px #444;
+}
+body.home footer {
+  background-color: #444;
+  padding: 8px 0;
+}
+body.home footer p {
+  max-width: 500px;
+  text-align: center;
+  margin: 0px auto;
+  padding: 8px;
+  font-size: 1.6rem;
+  color: #eee;
+}
+@media screen and (max-width: 700px) {
+  body.home div {
+    padding: 20px;
+  }
+  body.home div nav.navbar {
+    grid-template-columns: 1fr;
+  }
+  body.home div nav.navbar h1 {
+    grid-column: span 1;
+  }
 }
 
 /* Participation | Layout Logic */
 body.layout {
   background-color: #ddd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body.layout header {
   background-color: #aaa;
@@ -184,6 +275,7 @@ body.layout footer a {
 /* Participation | Style Guide */
 body.style-guide {
   background-color: #ddd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body.style-guide header {
   background-color: #ddd;
@@ -279,6 +371,7 @@ body.style-guide main section.font p {
 /* Participation | Industry Pulse */
 body.pulse {
   background-color: #ddd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body.pulse header {
   background-color: #ddd;
@@ -368,6 +461,7 @@ body.pulse main .cqw div.center {
 /* Participation | Hello, Javascript */
 body.js_intro {
   background-color: #ddd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body.js_intro header {
   text-align: center;
@@ -407,6 +501,7 @@ body.js_intro main article p {
 /* Participation | The Mobile Menu */
 body.mobile_menu {
   background-color: #ddd;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body.mobile_menu header {
   position: fixed;
