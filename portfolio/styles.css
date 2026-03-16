@@ -20,7 +20,7 @@ body header nav.navbar {
   z-index: 2;
   top: 0;
   right: 0;
-  background: #111;
+  background: rgba(17, 17, 17, 0.9);
   display: flex;
   max-width: 400px;
   justify-content: space-around;
@@ -64,8 +64,25 @@ body header button.mobileMenu {
   rotate: 90deg;
   transition: 250ms ease;
 }
-body header button.closed {
+body header button.mobileMenu.closed {
   rotate: 0deg;
+}
+body header button.scrollTop {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: #ff7f50;
+  background-color: rgba(17, 17, 17, 0.8);
+  border: 1px solid #ff7f50;
+  padding: 4px;
+  border-radius: 10px 0 0 0;
+  display: none;
+}
+body header button.scrollTop:hover {
+  color: #ddd;
+  border: 1px solid #ddd;
+  background-color: #444;
+  transition: 250ms;
 }
 body header section.hero {
   display: flex;
@@ -164,6 +181,11 @@ body main article.g5 h1 {
   color: #ddd;
   text-align: center;
 }
+body main article.g5 p {
+  font-size: 1.8rem;
+  color: #ddd;
+  text-align: center;
+}
 body main article.g6 {
   order: 6;
   grid-column: span 7;
@@ -191,6 +213,12 @@ body main article.g6 a h2 {
 }
 body main article.g6 a img {
   max-width: 100%;
+}
+body main article.g6 a:hover {
+  color: #ff7f50;
+  background-color: #111;
+  transition: 250ms;
+  border: 2px solid #ff7f50;
 }
 body main article.g7 {
   order: 7;
@@ -374,6 +402,9 @@ body footer nav a svg {
 @media screen and (max-width: 500px) {
   body header section.hero {
     padding: 50px 0 20px 0;
+  }
+  body header section.hero article {
+    padding: 0 30px;
   }
   body main {
     padding: 0;

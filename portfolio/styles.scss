@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-// $background: #383961;
-// $primary: #92dee4;
-// $secondary: #ce7cb5;
-// $tertiary: #103b5c; 
-// $dark: #14080e;
-// $light: #eee;
-
 $background: #444;
 $primary: #ddd;
 $secondary: #ff7f50;
@@ -37,7 +30,7 @@ body {
             position: fixed;
             z-index: 2;
             top: 0; right: 0;
-            background: $dark;
+            background: rgba($dark, .9);
             display: flex;
             max-width: 400px;
             justify-content: space-around;
@@ -80,8 +73,24 @@ body {
             rotate: 90deg;
             transition: 250ms ease;
         }
-        button.closed {
+        button.mobileMenu.closed {
             rotate: 0deg;
+        }
+        button.scrollTop {
+            position: fixed;
+            bottom: 0; right: 0;
+            color: $secondary;
+            background-color: rgba($dark, .8);
+            border: 1px solid $secondary;
+            padding: 4px;
+            border-radius: 10px 0 0 0;
+            display: none;
+            &:hover {
+                color: $primary;
+                border: 1px solid $primary;
+                background-color: $background;
+                transition: 250ms;
+            }
         }
         section.hero {
             display: flex;
@@ -178,6 +187,11 @@ body {
                 color: $primary;
                 text-align: center;
             }
+            p {
+                font-size: $paragraph;
+                color: $primary;
+                text-align: center;
+            }
         }
         article.g6 {
             order: 6;
@@ -204,6 +218,12 @@ body {
                 }
                 img {
                     max-width: 100%;
+                }
+                &:hover {
+                    color: $secondary;
+                    background-color: $dark;
+                    transition: 250ms;
+                    border: 2px solid $secondary;
                 }
             }
         }
@@ -406,6 +426,9 @@ body {
         header {
             section.hero {
                 padding: 50px 0 20px 0;
+                article {
+                    padding: 0 30px;
+                }
             }
         }
         main {
